@@ -69,4 +69,21 @@ export default {
     },
   },
 },
+coachesPreview: {
+  eyebrow: "Coaches",
+  title: "Our professionals",
+  description: "The team that leads the way to success",
+  button: "Learn more about our coaches",
+
+  roles: {
+    mak1: "MAK 1 coach",
+    mak2: "MAK 2 coach",
+    mak3: "MAK 3 coach",
+    mak4: "MAK 4 coach",
+    makBeebi: "MAK Beebi coach",
+    mak5: "MAK 5 coach",
+    mak6: "MAK 6 coach",
+    adultSwimming: "Adult swimming",
+  },
+},
 };

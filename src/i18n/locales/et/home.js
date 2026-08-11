@@ -69,4 +69,21 @@ export default {
     },
   },
 },
+coachesPreview: {
+  eyebrow: "Treenerid",
+  title: "Meie professionaalid",
+  description: "Meeskond, kes aitab jõuda võitudeni",
+  button: "Loe treenerite kohta lähemalt",
+
+  roles: {
+    mak1: "MAK 1 treener",
+    mak2: "MAK 2 treener",
+    mak3: "MAK 3 treener",
+    mak4: "MAK 4 treener",
+    makBeebi: "MAK Beebi treener",
+    mak5: "MAK 5 treener",
+    mak6: "MAK 6 treener",
+    adultSwimming: "Täiskasvanute ujumine",
+  },
+},
 };

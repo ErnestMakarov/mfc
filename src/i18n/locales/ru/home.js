@@ -70,4 +70,21 @@ export default {
       },
     },
   },
+  coachesPreview: {
+  eyebrow: "Тренеры",
+  title: "Наши профессионалы",
+  description: "Команда, которая ведёт к победам",
+  button: "Подробнее о тренерах",
+
+  roles: {
+    mak1: "Тренер группы MAK 1",
+    mak2: "Тренер группы MAK 2",
+    mak3: "Тренер группы MAK 3",
+    mak4: "Тренер группы MAK 4",
+    makBeebi: "Тренер группы MAK Beebi",
+    mak5: "Тренер группы MAK 5",
+    mak6: "Тренер группы MAK 6",
+    adultSwimming: "Плавание для взрослых",
+  },
+},
 };
