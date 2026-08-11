@@ -1,7 +1,11 @@
-import React from 'react'
+import Hero from "./Hero.jsx";
+import About from "./About.jsx";
 
 export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <Hero />
+      <About />
+    </>
+  );
 }
