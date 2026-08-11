@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-manrope: "Manrope", sans-serif;
+
+  --color-primary: #2a66ea;
+  --color-primary-hover: #2059d5;
+  --color-dark: #121722;
+  --color-text: #4f5969;
+  --color-muted: #8892a3;
+  --color-line: #e6eaf1;
+  --color-light: #f4f7fd;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    min-width: 320px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #2a66ea #ffffff;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: clip;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #121722;
+    background-color: #ffffff;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+    isolation: isolate;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font: inherit;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+  }
+
+  button {
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  input,
+  textarea,
+  select {
+    border-radius: 0;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button,
+  select {
+    text-transform: none;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  img,
+  svg {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+  ::placeholder {
+    color: #929baa;
+    opacity: 1;
+  }
+
+  ::selection {
+    color: #ffffff;
+    background-color: #2a66ea;
+  }
+
+  :focus-visible {
+    outline: 3px solid rgb(42 102 234 / 28%);
+    outline-offset: 3px;
+  }
+
+  html::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  html::-webkit-scrollbar-track {
+    background-color: #ffffff;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background-color: #2a66ea;
+  }
+
+  html::-webkit-scrollbar-thumb:hover {
+    background-color: #2059d5;
+  }
+}
+
+@layer components {
+  .page-container {
+    width: min(1720px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  .section-spacing {
+    padding-block: clamp(72px, 7vw, 140px);
+  }
+
+  .section-spacing-small {
+    padding-block: clamp(48px, 5vw, 96px);
+  }
+
+  .section-title {
+    max-width: 900px;
+    font-size: clamp(34px, 3.2vw, 64px);
+    font-weight: 650;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+    color: #121722;
+  }
+
+  .section-description {
+    max-width: 680px;
+    font-size: clamp(15px, 1vw, 18px);
+    line-height: 1.7;
+    color: #5d6675;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #2a66ea;
+  }
+
+  .interactive-transition {
+    transition:
+      color 250ms ease,
+      background-color 250ms ease,
+      border-color 250ms ease,
+      box-shadow 250ms ease,
+      opacity 250ms ease,
+      transform 250ms ease;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    width: min(1720px, calc(100% - 80px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
