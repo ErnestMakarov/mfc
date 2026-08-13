@@ -328,3 +328,18 @@
     transform: none;
   }
 }
+
+.instagram-preview-card .instagram-media {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+.instagram-preview-card iframe {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  border: 0 !important;
+}

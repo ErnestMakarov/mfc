@@ -86,4 +86,22 @@ coachesPreview: {
     adultSwimming: "Adult swimming",
   },
 },
+instagramPreview: {
+  eyebrow: "Club life",
+  titleFirst: "We do more than train,",
+  titleAccent: "we live swimming",
+
+  description:
+    "Competitions, training camps and trips bring us closer to new victories and make our team stronger.",
+
+  allNews: "View all news",
+  loading: "Loading post",
+  openPost: "Open this post on Instagram",
+
+  bannerTitle: "Follow the life of our club",
+  bannerDescription:
+    "Be the first to hear about competitions, training sessions and new club events.",
+
+  instagramButton: "Open Instagram",
+},
 };

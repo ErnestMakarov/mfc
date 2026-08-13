@@ -86,4 +86,22 @@ coachesPreview: {
     adultSwimming: "Täiskasvanute ujumine",
   },
 },
+instagramPreview: {
+  eyebrow: "Klubi elu",
+  titleFirst: "Me ei tegele ainult treeningutega,",
+  titleAccent: "me elame ujumisele",
+
+  description:
+    "Võistlused, treeninglaagrid ja väljasõidud viivad meid uute võitudeni ning muudavad meie meeskonna tugevamaks.",
+
+  allNews: "Vaata kõiki uudiseid",
+  loading: "Postituse laadimine",
+  openPost: "Ava postitus Instagramis",
+
+  bannerTitle: "Jälgi meie klubi tegemisi",
+  bannerDescription:
+    "Saa esimesena teada võistlustest, treeningutest ja klubi uutest sündmustest.",
+
+  instagramButton: "Ava Instagram",
+},
 };

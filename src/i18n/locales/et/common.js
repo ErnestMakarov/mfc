@@ -68,4 +68,48 @@ export default {
 
   download: "Laadi ajakava alla",
 },
+faq: {
+  eyebrow: "Korduma kippuvad küsimused",
+  title: "Küsimused ja vastused",
+  imageAlt: "Maardu Finswimming Clubi medalid",
+
+  items: {
+    startingAge: {
+      question:
+        "Mis vanusest saab lestaujumisega alustada?",
+      answer:
+        "Treeningutega võib alustada juba varases eas. MAK 6 sobib 3–5-aastastele lastele ning MAK Baby pakub veetreeninguid lapsevanematele ja beebidele. Treener aitab valida lapse vanusele ja oskustele sobiva rühma.",
+    },
+
+    swimmingSkills: {
+      question:
+        "Kas enne treeningutega alustamist peab oskama ujuda?",
+      answer:
+        "Ei pea. Algajate rühmades harjuvad lapsed järk-järgult veega, õpivad veepinnal püsima ning omandavad ujumise põhioskused.",
+    },
+
+    equipment: {
+      question:
+        "Millist varustust on treeninguteks vaja?",
+      answer:
+        "Esimesteks treeninguteks piisab tavaliselt ujumisriietest, ujumismütsist, prillidest, rätikust ja vahetusjalatsitest. Lestad, hingamistoru ja muu erivarustus läheb vaja hiljem ning treener annab sellest eelnevalt teada.",
+    },
+
+    experience: {
+      question:
+        "Kas treeningutega saab liituda ilma varasema spordikogemuseta?",
+      answer:
+        "Jah. Klubis on rühmad erinevas vanuses ja erineva ettevalmistusega osalejatele — esimesest veega tutvumisest kuni tippspordini. Treener aitab valida sobiva rühma.",
+    },
+
+    trialTraining: {
+      question: "Kuidas proovitrenni registreeruda?",
+      answerBefore:
+        "Jätke oma soov",
+      contactLink: "kontaktide lehel",
+      answerAfter:
+        ". Võtame teiega ühendust, täpsustame osaleja vanuse ja ettevalmistuse ning pakume sobivat rühma ja treeninguaega.",
+    },
+  },
+},
 };
