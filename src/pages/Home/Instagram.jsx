@@ -60,7 +60,7 @@ export default function Instagram() {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-white py-[clamp(72px,8vw,140px)]">
+    <section className="overflow-hidden bg-white pt-[clamp(44px,3.5vw,70px)] pb-[clamp(44px,3.5vw,70px)]">
       <div className="page-container">
         <div className="grid gap-10 xl:grid-cols-[330px_minmax(0,1fr)] xl:items-start xl:gap-16">
           <div>

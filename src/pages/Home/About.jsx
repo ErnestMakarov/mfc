@@ -176,7 +176,7 @@ export default function About() {
   const { t } = useTranslation("home");
 
   return (
-    <section className="overflow-hidden bg-white py-[clamp(72px,8vw,150px)]">
+    <section className="overflow-hidden bg-white pt-[clamp(72px,6vw,120px)] pb-[clamp(44px,3.5vw,70px)]">
       <div className="page-container">
         <div className="grid items-end gap-10 lg:grid-cols-[0.72fr_1.28fr] xl:gap-16">
           <div className="max-w-[560px]">

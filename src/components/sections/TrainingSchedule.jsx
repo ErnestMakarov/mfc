@@ -163,7 +163,7 @@ export default function TrainingSchedule() {
   );
 
   return (
-    <section className="overflow-hidden bg-white py-[clamp(72px,8vw,140px)]">
+    <section className="overflow-hidden bg-white pt-[clamp(56px,4.5vw,90px)] pb-[clamp(44px,3.5vw,70px)]">
       <div className="page-container">
         <div className="grid gap-10 lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[330px_minmax(0,1fr)] xl:gap-16">
           <div>

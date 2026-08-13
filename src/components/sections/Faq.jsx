@@ -23,7 +23,7 @@ export default function Faq() {
   }
 
   return (
-    <section className="overflow-hidden bg-white py-[clamp(72px,8vw,140px)]">
+    <section className="overflow-hidden bg-white pt-[clamp(44px,3.5vw,70px)] pb-[clamp(72px,6vw,120px)]">
       <div className="page-container">
         <div>
           <p className="text-[11px] font-extrabold uppercase tracking-[0.06em] text-[#2A66EA] sm:text-[12px]">
@@ -45,11 +45,13 @@ export default function Faq() {
               return (
                 <div
                   key={faqKey}
-                  className={
+                  className={[
+                    "relative transition-colors duration-500",
+                    isOpen ? "bg-[#FBFCFF]" : "bg-white",
                     index !== faqKeys.length - 1
                       ? "border-b border-[#E7EBF1]"
-                      : ""
-                  }
+                      : "",
+                  ].join(" ")}
                 >
                   <button
                     id={buttonId}
@@ -76,9 +78,10 @@ export default function Faq() {
                       className={[
                         "relative flex h-9 w-9 shrink-0 items-center",
                         "justify-center rounded-full border",
-                        "transition-all duration-300",
+                        "transition-all duration-500",
+                        "ease-[cubic-bezier(0.22,1,0.36,1)]",
                         isOpen
-                          ? "rotate-45 border-[#2A66EA] bg-[#2A66EA] text-white"
+                          ? "rotate-45 border-[#2A66EA] bg-[#2A66EA] text-white shadow-[0_7px_20px_rgba(42,102,234,0.18)]"
                           : "border-[#DFE5EE] bg-white text-[#536071] group-hover:border-[#2A66EA] group-hover:text-[#2A66EA]",
                       ].join(" ")}
                       aria-hidden="true"
@@ -92,21 +95,46 @@ export default function Faq() {
                     id={panelId}
                     role="region"
                     aria-labelledby={buttonId}
+                    aria-hidden={!isOpen}
                     className={[
                       "grid transition-[grid-template-rows,opacity]",
-                      "duration-400 ease-out",
+                      "duration-500",
+                      "ease-[cubic-bezier(0.22,1,0.36,1)]",
                       isOpen
                         ? "grid-rows-[1fr] opacity-100"
                         : "grid-rows-[0fr] opacity-0",
                     ].join(" ")}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-6 pr-16 sm:px-7 sm:pb-7 sm:pr-20">
+                      <div
+                        className={[
+                          "relative px-5 pb-6 pr-16",
+                          "transition-all duration-500",
+                          "ease-[cubic-bezier(0.22,1,0.36,1)]",
+                          "sm:px-7 sm:pb-7 sm:pr-20",
+                          isOpen
+                            ? "translate-y-0 opacity-100"
+                            : "-translate-y-3 opacity-0",
+                        ].join(" ")}
+                      >
+                        <span
+                          className={[
+                            "absolute bottom-0 left-5 h-[2px]",
+                            "rounded-full bg-[#2A66EA]",
+                            "transition-[width] duration-700",
+                            "ease-[cubic-bezier(0.22,1,0.36,1)]",
+                            "sm:left-7",
+                            isOpen ? "w-10" : "w-0",
+                          ].join(" ")}
+                          aria-hidden="true"
+                        />
+
                         {faqKey === "trialTraining" ? (
                           <p className="max-w-[720px] text-[12px] leading-[1.75] text-[#727D8D] sm:text-[14px]">
                             {t(
                               "faq.items.trialTraining.answerBefore",
                             )}{" "}
+
                             <Link
                               to="/contacts"
                               className="font-bold text-[#2A66EA] underline decoration-[#2A66EA]/30 underline-offset-4 transition-colors hover:text-[#2059D5] hover:decoration-[#2059D5]"
@@ -115,6 +143,7 @@ export default function Faq() {
                                 "faq.items.trialTraining.contactLink",
                               )}
                             </Link>
+
                             {t(
                               "faq.items.trialTraining.answerAfter",
                             )}

@@ -47,7 +47,7 @@ export default function Coaches() {
   const { t } = useTranslation("home");
 
   return (
-    <section className="relative overflow-hidden bg-white pt-[clamp(72px,8vw,145px)]">
+    <section className="relative overflow-hidden bg-white pt-[clamp(44px,3.5vw,70px)]">
       <div className="page-container">
         <div className="flex items-end justify-between gap-8">
           <div>
@@ -141,7 +141,7 @@ export default function Coaches() {
         </Link>
       </div>
 
-      <div className="relative left-1/2 mt-[clamp(48px,6vw,100px)] w-screen -translate-x-1/2 overflow-hidden">
+      <div className="relative left-1/2 mt-[clamp(40px,4vw,72px)] w-screen -translate-x-1/2 overflow-hidden">
         <img
           src={border}
           alt=""
