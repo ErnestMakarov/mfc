@@ -1,7 +1,13 @@
-import React from 'react'
+import PageHero from "../../components/common/PageHero.jsx";
 
 export default function Contacts() {
   return (
-    <div>Contacts</div>
-  )
+    <>
+      <PageHero namespace="contacts" />
+
+      <main>
+        Contacts content
+      </main>
+    </>
+  );
 }

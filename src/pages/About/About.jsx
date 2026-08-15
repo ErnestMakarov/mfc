@@ -1,7 +1,13 @@
-import React from 'react'
+import PageHero from "../../components/common/PageHero.jsx";
 
 export default function About() {
   return (
-    <div>About</div>
-  )
+    <>
+      <PageHero namespace="about" />
+
+      <main>
+        About content
+      </main>
+    </>
+  );
 }

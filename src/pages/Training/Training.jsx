@@ -1,8 +1,13 @@
-import React from 'react'
+import PageHero from "../../components/common/PageHero.jsx";
 
 export default function Training() {
   return (
-    <div>Training</div>
-  )
-}
+    <>
+      <PageHero namespace="training" />
 
+      <main>
+        Training content
+      </main>
+    </>
+  );
+}

@@ -1,7 +1,13 @@
-import React from 'react'
+import PageHero from "../../components/common/PageHero.jsx";
 
 export default function Documents() {
   return (
-    <div>Documents</div>
-  )
+    <>
+      <PageHero namespace="documents" />
+
+      <main>
+        Documents content
+      </main>
+    </>
+  );
 }
