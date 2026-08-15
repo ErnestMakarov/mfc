@@ -4,60 +4,63 @@ import { useTranslation } from "react-i18next";
 import aboutImageOne from "../../assets/images/home-about-1.png";
 import aboutImageTwo from "../../assets/images/home-about-2.png";
 
-function BabySwimmingIcon() {
+function ParentAndBabyIcon() {
   return (
-    <svg viewBox="0 0 64 64" fill="none">
-      <path
-        d="M19 29C19 20.7 24.8 14 32 14C39.2 14 45 20.7 45 29V34C45 43.4 39.2 50 32 50C24.8 50 19 43.4 19 34V29Z"
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      aria-hidden="true"
+    >
+      <circle
+        cx="22"
+        cy="16"
+        r="7"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
+      />
+
+      <path
+        d="M10 39V34C10 27.9 14.9 23 21 23H23C27.7 23 31.8 26 33.4 30.3"
+        stroke="currentColor"
+        strokeWidth="2.2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
 
       <path
-        d="M24 19C25.8 14.3 28.5 11 32 8C35.5 11 38.2 14.3 40 19"
+        d="M14 31L25.5 39.5C29.5 42.4 35.1 41.9 38.4 38.2L41 35.3"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
 
-      <path
-        d="M32 8V4"
+      <circle
+        cx="42.5"
+        cy="29"
+        r="5.5"
         stroke="currentColor"
-        strokeWidth="2.3"
-        strokeLinecap="round"
-      />
-
-      <circle cx="27" cy="30" r="1.8" fill="currentColor" />
-      <circle cx="37" cy="30" r="1.8" fill="currentColor" />
-
-      <path
-        d="M27 38C28.5 40 30.1 41 32 41C33.9 41 35.5 40 37 38"
-        stroke="currentColor"
-        strokeWidth="2.3"
-        strokeLinecap="round"
+        strokeWidth="2.2"
       />
 
       <path
-        d="M19 31C14 31 11 28.5 9 25M45 31C50 31 53 28.5 55 25"
+        d="M38.5 33.2C42.5 34 46 36.3 48.2 39.5"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinecap="round"
       />
 
       <path
-        d="M9 25L5 27M55 25L59 27"
+        d="M5 44C9.5 41.8 14 41.8 18.5 44C23 46.2 27.5 46.2 32 44C36.5 41.8 41 41.8 45.5 44C50 46.2 54.5 46.2 59 44"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinecap="round"
       />
 
       <path
-        d="M21 46L17 53M43 46L47 53"
+        d="M8 51C12 49.2 16 49.2 20 51C24 52.8 28 52.8 32 51C36 49.2 40 49.2 44 51C48 52.8 52 52.8 56 51"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinecap="round"
       />
     </svg>
@@ -66,56 +69,60 @@ function BabySwimmingIcon() {
 
 function GroupIcon() {
   return (
-    <svg viewBox="0 0 64 64" fill="none">
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      aria-hidden="true"
+    >
       <circle
         cx="32"
         cy="14"
         r="7"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
       />
 
       <circle
-        cx="15"
-        cy="20"
-        r="6"
+        cx="14"
+        cy="21"
+        r="5.5"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
       />
 
       <circle
-        cx="49"
-        cy="20"
-        r="6"
+        cx="50"
+        cy="21"
+        r="5.5"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
       />
 
       <path
-        d="M23 32C23 27.6 26.6 24 31 24H33C37.4 24 41 27.6 41 32V52H23V32Z"
+        d="M22 34C22 28.5 26.5 24 32 24C37.5 24 42 28.5 42 34V53H22V34Z"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinejoin="round"
       />
 
       <path
-        d="M8 35C8 31.1 11.1 28 15 28C18.9 28 22 31.1 22 35V51H8V35Z"
+        d="M6 39C6 33.5 9.6 29 14 29C18.4 29 22 33.5 22 39V52H6V39Z"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinejoin="round"
       />
 
       <path
-        d="M42 35C42 31.1 45.1 28 49 28C52.9 28 56 31.1 56 35V51H42V35Z"
+        d="M42 39C42 33.5 45.6 29 50 29C54.4 29 58 33.5 58 39V52H42V39Z"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinejoin="round"
       />
 
       <path
-        d="M32 36V52M15 39V51M49 39V51"
+        d="M32 37V53M14 41V52M50 41V52"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinecap="round"
       />
     </svg>
@@ -124,33 +131,37 @@ function GroupIcon() {
 
 function PersonalIcon() {
   return (
-    <svg viewBox="0 0 64 64" fill="none">
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      aria-hidden="true"
+    >
       <circle
         cx="32"
         cy="16"
-        r="9"
+        r="8"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
       />
 
       <path
-        d="M17 41C17 33.3 23.3 27 31 27H33C40.7 27 47 33.3 47 41V53H17V41Z"
+        d="M17 42C17 33.7 23.7 27 32 27C40.3 27 47 33.7 47 42V53H17V42Z"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinejoin="round"
       />
 
       <path
-        d="M32 36V53"
+        d="M32 37V53"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinecap="round"
       />
 
       <path
-        d="M12 53H52"
+        d="M11 53H53"
         stroke="currentColor"
-        strokeWidth="2.3"
+        strokeWidth="2.2"
         strokeLinecap="round"
       />
     </svg>
@@ -160,7 +171,7 @@ function PersonalIcon() {
 const advantages = [
   {
     key: "baby",
-    icon: <BabySwimmingIcon />,
+    icon: <ParentAndBabyIcon />,
   },
   {
     key: "group",
@@ -176,7 +187,7 @@ export default function About() {
   const { t } = useTranslation("home");
 
   return (
-    <section className="overflow-hidden bg-white pt-[clamp(72px,6vw,120px)] pb-[clamp(44px,3.5vw,70px)]">
+    <section className="overflow-hidden bg-white pb-[clamp(44px,3.5vw,70px)] pt-[clamp(72px,6vw,120px)]">
       <div className="page-container">
         <div className="grid items-end gap-10 lg:grid-cols-[0.72fr_1.28fr] xl:gap-16">
           <div className="max-w-[560px]">
@@ -206,7 +217,7 @@ export default function About() {
               <span className="relative">
                 {t("aboutPreview.link")}
 
-                <span className="absolute -bottom-1 left-0 h-[1px] w-0 bg-[#2A66EA] transition-[width] duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#2A66EA] transition-[width] duration-300 group-hover:w-full" />
               </span>
 
               <svg
@@ -234,6 +245,7 @@ export default function About() {
                 className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                 loading="lazy"
                 decoding="async"
+                draggable="false"
               />
 
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#10203A]/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -246,6 +258,7 @@ export default function About() {
                 className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 loading="lazy"
                 decoding="async"
+                draggable="false"
               />
 
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#10203A]/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -255,7 +268,7 @@ export default function About() {
 
         <div className="mt-14 grid border-y border-[#E6EBF2] md:grid-cols-3 md:border-y-0 xl:mt-16">
           {advantages.map((advantage, index) => (
-            <div
+            <article
               key={advantage.key}
               className={[
                 "group flex items-start gap-4 py-6",
@@ -269,7 +282,7 @@ export default function About() {
                   : "",
               ].join(" ")}
             >
-              <span className="h-12 w-12 shrink-0 text-[#2A66EA] transition-transform duration-300 group-hover:-translate-y-1 sm:h-14 sm:w-14">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center text-[#2A66EA] transition-transform duration-300 group-hover:-translate-y-1 sm:h-14 sm:w-14">
                 {advantage.icon}
               </span>
 
@@ -286,7 +299,7 @@ export default function About() {
                   )}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

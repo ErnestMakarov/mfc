@@ -114,4 +114,32 @@ faq: {
     },
   },
 },
+footer: {
+  homeLabel: "Перейти на главную страницу",
+  clubName: "Maardu Finswimming Club",
+  description:
+    "Профессиональный клуб по плаванию в ластах. Мы растим чемпионов и создаём сильное спортивное сообщество.",
+
+  navigation: "Навигация",
+  contacts: "Контакты",
+  workingHours: "Режим работы",
+
+  links: {
+    about: "О клубе",
+    coaches: "Тренеры",
+    training: "Тренировки",
+    news: "Новости",
+    contacts: "Контакты",
+  },
+
+  days: {
+    weekdays: "Пн–Пт",
+    saturday: "Сб",
+    sunday: "Вс",
+  },
+
+  privacy: "Политика конфиденциальности",
+  copyright:
+    "Maardu Finswimming Club. Все права защищены.",
+},
 };

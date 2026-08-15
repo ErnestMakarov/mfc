@@ -112,4 +112,32 @@ faq: {
     },
   },
 },
+footer: {
+  homeLabel: "Go to the home page",
+  clubName: "Maardu Finswimming Club",
+  description:
+    "A professional finswimming club. We develop champions and build a strong sporting community.",
+
+  navigation: "Navigation",
+  contacts: "Contacts",
+  workingHours: "Opening hours",
+
+  links: {
+    about: "About",
+    coaches: "Coaches",
+    training: "Training",
+    news: "News",
+    contacts: "Contacts",
+  },
+
+  days: {
+    weekdays: "Mon–Fri",
+    saturday: "Sat",
+    sunday: "Sun",
+  },
+
+  privacy: "Privacy policy",
+  copyright:
+    "Maardu Finswimming Club. All rights reserved.",
+},
 };

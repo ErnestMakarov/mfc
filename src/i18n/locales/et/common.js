@@ -112,4 +112,32 @@ faq: {
     },
   },
 },
+footer: {
+  homeLabel: "Mine avalehele",
+  clubName: "Maardu Finswimming Club",
+  description:
+    "Professionaalne lestaujumisklubi. Kasvatame meistreid ja loome tugeva spordikogukonna.",
+
+  navigation: "Navigatsioon",
+  contacts: "Kontaktid",
+  workingHours: "Lahtiolekuajad",
+
+  links: {
+    about: "Klubist",
+    coaches: "Treenerid",
+    training: "Treeningud",
+    news: "Uudised",
+    contacts: "Kontaktid",
+  },
+
+  days: {
+    weekdays: "E–R",
+    saturday: "L",
+    sunday: "P",
+  },
+
+  privacy: "Privaatsustingimused",
+  copyright:
+    "Maardu Finswimming Club. Kõik õigused kaitstud.",
+},
 };
