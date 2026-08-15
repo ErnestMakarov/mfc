@@ -14,7 +14,7 @@ export default function PageHero({ namespace }) {
     : [];
 
   return (
-    <section className="relative isolate overflow-hidden bg-white pt-[clamp(120px,10vw,180px)]">
+    <section className="relative isolate overflow-hidden bg-white pt-[clamp(110px,10vw,180px)]">
       <div className="pointer-events-none absolute left-[-180px] top-[-200px] -z-10 h-[500px] w-[500px] rounded-full bg-[#EAF2FF]/60 blur-[130px]" />
 
       <div className="page-container">
@@ -25,22 +25,20 @@ export default function PageHero({ namespace }) {
 
           <h1 className="page-hero-reveal page-hero-delay-1 mt-6 text-[clamp(38px,5vw,78px)] font-semibold leading-[1.04] tracking-[-0.055em] text-[#121722]">
             {lines.map((line, lineIndex) => (
-              <span
-                key={lineIndex}
-                className="block"
-              >
-                {line.map((part, partIndex) => (
-                  <span
-                    key={partIndex}
-                    className={
-                      part.accent
-                        ? "text-[#2A66EA]"
-                        : "text-[#121722]"
-                    }
-                  >
-                    {part.text}
-                  </span>
-                ))}
+              <span key={lineIndex} className="block">
+                {Array.isArray(line) &&
+                  line.map((part, partIndex) => (
+                    <span
+                      key={partIndex}
+                      className={
+                        part.accent
+                          ? "text-[#2A66EA]"
+                          : "text-[#121722]"
+                      }
+                    >
+                      {part.text}
+                    </span>
+                  ))}
               </span>
             ))}
           </h1>
@@ -51,14 +49,13 @@ export default function PageHero({ namespace }) {
         </div>
       </div>
 
-      <div className="page-hero-border relative left-1/2 mt-[clamp(48px,6vw,88px)] h-[clamp(52px,6vw,92px)] w-screen -translate-x-1/2 overflow-hidden">
+      <div className="page-hero-border relative mt-[clamp(48px,6vw,88px)] h-[clamp(48px,6vw,92px)] w-full overflow-hidden">
         <img
           src={borderImage}
           alt=""
           aria-hidden="true"
-          className="absolute left-1/2 top-1/2 h-full w-full min-w-[820px] max-w-none -translate-x-1/2 -translate-y-1/2 object-fill sm:min-w-[1100px]"
+          className="absolute inset-0 block h-full w-full max-w-none object-fill"
           draggable="false"
-          fetchPriority="high"
         />
       </div>
 
