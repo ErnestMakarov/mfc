@@ -49,12 +49,12 @@ export default function PageHero({ namespace }) {
         </div>
       </div>
 
-      <div className="page-hero-border relative mt-[clamp(48px,6vw,88px)] h-[clamp(48px,6vw,92px)] w-full overflow-hidden">
+      <div className="page-hero-border relative mt-[clamp(48px,6vw,88px)] h-[54px] w-full overflow-hidden sm:h-[68px] lg:h-[92px]">
         <img
           src={borderImage}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 block h-full w-full max-w-none object-fill"
+          className="block h-full w-full object-cover object-center"
           draggable="false"
         />
       </div>
