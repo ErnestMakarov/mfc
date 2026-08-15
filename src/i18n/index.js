@@ -28,6 +28,10 @@ import ruNews from "./locales/ru/news.js";
 import ruContacts from "./locales/ru/contacts.js";
 import ruDocuments from "./locales/ru/documents.js";
 
+import enPrivacy from "./locales/en/privacy.js";
+import etPrivacy from "./locales/et/privacy.js";
+import ruPrivacy from "./locales/ru/privacy.js";
+
 const resources = {
   en: {
     common: enCommon,
@@ -38,6 +42,7 @@ const resources = {
     news: enNews,
     contacts: enContacts,
     documents: enDocuments,
+    privacy: enPrivacy,
   },
   et: {
     common: etCommon,
@@ -48,6 +53,7 @@ const resources = {
     news: etNews,
     contacts: etContacts,
     documents: etDocuments,
+    privacy: etPrivacy,
   },
   ru: {
     common: ruCommon,
@@ -58,6 +64,7 @@ const resources = {
     news: ruNews,
     contacts: ruContacts,
     documents: ruDocuments,
+    privacy: ruPrivacy,
   },
 };
 
@@ -78,6 +85,7 @@ i18n.use(initReactI18next).init({
     "news",
     "contacts",
     "documents",
+    "privacy",
   ],
   interpolation: {
     escapeValue: false,
