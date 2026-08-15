@@ -398,3 +398,17 @@
     transform: none;
   }
 }
+
+.instagram-feed-card .instagram-media,
+.instagram-feed-card iframe {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.instagram-feed-card iframe {
+  display: block !important;
+}

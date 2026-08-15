@@ -6,39 +6,7 @@ import { instagramPosts } from "../../data/instagramPosts.js";
 
 const homePosts = instagramPosts.slice(0, 3);
 
-function loadInstagramEmbed() {
-  return new Promise((resolve, reject) => {
-    if (window.instgrm?.Embeds) {
-      resolve();
-      return;
-    }
-
-    const existingScript = document.querySelector(
-      'script[src="https://www.instagram.com/embed.js"]',
-    );
-
-    if (existingScript) {
-      existingScript.addEventListener("load", resolve, {
-        once: true,
-      });
-
-      existingScript.addEventListener("error", reject, {
-        once: true,
-      });
-
-      return;
-    }
-
-    const script = document.createElement("script");
-
-    script.src = "https://www.instagram.com/embed.js";
-    script.async = true;
-    script.onload = resolve;
-    script.onerror = reject;
-
-    document.body.appendChild(script);
-  });
-}
+import { loadInstagramEmbed } from "../../utils/loadInstagramEmbed.js";
 
 export default function Instagram() {
   const { t } = useTranslation("home");
