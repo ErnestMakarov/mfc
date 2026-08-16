@@ -412,3 +412,7 @@
 .instagram-feed-card iframe {
   display: block !important;
 }
+
+button, ul, li, a, svg {
+  user-select: none;
+}
