@@ -140,4 +140,63 @@ footer: {
   copyright:
     "Maardu Finswimming Club. Kõik õigused kaitstud.",
 },
+contactForm: {
+  eyebrow: "Liituge meie meeskonnaga",
+  titleFirst: "Saatke meile taotlus",
+  titleSecond: "ja me",
+  titleAccent: "võtame teiega ühendust!",
+  description:
+    "Täitke vorm ning vastame teie küsimustele, aitame valida sobiva rühma ja räägime klubist lähemalt.",
+
+  fields: {
+    childName: "Lapse nimi",
+    parentName: "Lapsevanema nimi",
+    childAge: "Lapse vanus",
+    phone: "Telefon",
+    email: "E-post",
+    message: "Sõnum — soovi korral",
+  },
+
+  consent: {
+    before: "Olen tutvunud",
+    link: "privaatsustingimustega",
+    after:
+      " ja kinnitan, et olen lapse vanem või seaduslik esindaja.",
+  },
+
+  submit: "Saada taotlus",
+  sending: "Taotluse saatmine...",
+
+  status: {
+    success:
+      "Taotlus on edukalt saadetud. Võtame teiega esimesel võimalusel ühendust.",
+    error:
+      "Taotluse saatmine ebaõnnestus. Proovige uuesti või võtke meiega ühendust telefoni teel.",
+    notConfigured:
+      "Vorm ei ole veel e-postiga ühendatud. EmailJS seadistatakse enne veebilehe avaldamist.",
+  },
+
+  advantages: {
+    response: {
+      title: "Kiire vastus",
+      description:
+        "Võtame teiega esimesel võimalusel ühendust.",
+    },
+    approach: {
+      title: "Personaalne lähenemine",
+      description:
+        "Leiame teie tasemele ja eesmärkidele sobiva treeningu.",
+    },
+    privacy: {
+      title: "Privaatsus",
+      description:
+        "Andmeid kasutatakse ainult taotluse töötlemiseks ja teiega ühenduse võtmiseks.",
+    },
+  },
+
+  contacts: {
+    title: "Kas teil on küsimusi?",
+    description: "Oleme alati valmis aitama",
+  },
+},
 };

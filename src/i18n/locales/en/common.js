@@ -140,4 +140,63 @@ footer: {
   copyright:
     "Maardu Finswimming Club. All rights reserved.",
 },
+contactForm: {
+  eyebrow: "Become part of our team",
+  titleFirst: "Send us an application",
+  titleSecond: "and we will",
+  titleAccent: "contact you!",
+  description:
+    "Complete the form and we will answer your questions, help you choose the right group and tell you more about the club.",
+
+  fields: {
+    childName: "Child’s name",
+    parentName: "Parent’s name",
+    childAge: "Child’s age",
+    phone: "Phone",
+    email: "E-mail",
+    message: "Message — optional",
+  },
+
+  consent: {
+    before: "I have read the",
+    link: "privacy policy",
+    after:
+      " and confirm that I am the child’s parent or legal representative.",
+  },
+
+  submit: "Send application",
+  sending: "Sending application...",
+
+  status: {
+    success:
+      "Your application has been sent successfully. We will contact you shortly.",
+    error:
+      "The application could not be sent. Please try again or contact us by phone.",
+    notConfigured:
+      "The form is not connected to e-mail yet. EmailJS will be configured before launch.",
+  },
+
+  advantages: {
+    response: {
+      title: "Fast response",
+      description:
+        "We will contact you as soon as possible.",
+    },
+    approach: {
+      title: "Individual approach",
+      description:
+        "We will find training suited to your level and goals.",
+    },
+    privacy: {
+      title: "Privacy",
+      description:
+        "Your data is used only to process the application and contact you.",
+    },
+  },
+
+  contacts: {
+    title: "Have questions?",
+    description: "We are always ready to help",
+  },
+},
 };

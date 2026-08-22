@@ -7,6 +7,9 @@ import TrainingSchedule from "../../components/sections/TrainingSchedule.jsx";
 
 import Faq from "../../components/sections/Faq.jsx";
 
+import ContactForm from "../../components/common/ContactForm.jsx";
+
+
 export default function Home() {
   return (
     <>
@@ -16,6 +19,7 @@ export default function Home() {
       <TrainingSchedule />
       <Instagram />
       <Faq />
+      <ContactForm />
     </>
   );
 }
