@@ -1,36 +1,23 @@
 export default {
   hero: {
-    eyebrow: "Профессиональный клуб по плаванию в ластах",
-    titleFirst: "Maardu",
-    titleAccent: "Finswimming",
-    titleLast: "Club",
-    description: "Любовь к воде с детства",
-    aboutButton: "О клубе",
-    joinButton: "Вступить",
-    imageAlt: "Спортсмен клуба Maardu Finswimming во время тренировки",
+  eyebrow: "Профессиональный клуб плавания в ластах · с 1992 года",
+  titleFirst: "Больше чем",
+  titleAccent: "плавание.",
+  titleLast: "Это сила.",
+  description:
+    "Тренировки для детей, подростков и взрослых — от первых движений в воде до больших побед.",
+  trainingButton: "Подобрать тренировку",
+  joinButton: "Вступить в клуб",
+  imageAlt:
+    "Спортсмен Maardu Finswimming Club на тренировке по плаванию в ластах",
+  scrollDown: "Перейти к следующему разделу",
 
-    stats: {
-      founded: {
-        label: "Основан",
-        value: "В 1992 году",
-      },
-
-      athletes: {
-        label: "Более",
-        value: "100+ спортсменов",
-      },
-
-      medals: {
-        label: "50+ медалей",
-        value: "На международных турнирах",
-      },
-
-      estonia: {
-        label: "Представляем",
-        value: "Эстонию на мировой арене",
-      },
-    },
+  stats: {
+    athletes: "спортсменов",
+    medals: "медалей",
+    experience: "лет опыта",
   },
+},
 
   aboutPreview: {
     eyebrow: "О клубе",

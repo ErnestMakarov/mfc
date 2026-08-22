@@ -1,36 +1,23 @@
 export default {
   hero: {
-    eyebrow: "Professionaalne lestaujumisklubi",
-    titleFirst: "Maardu",
-    titleAccent: "Finswimming",
-    titleLast: "Club",
-    description: "Armastus vee vastu lapsepõlvest",
-    aboutButton: "Klubist",
-    joinButton: "Liitu",
-    imageAlt: "Maardu Finswimming Clubi sportlane treeningul",
+  eyebrow: "Professionaalne lestaujumisklubi · alates 1992",
+  titleFirst: "Rohkem kui",
+  titleAccent: "ujumine.",
+  titleLast: "See on jõud.",
+  description:
+    "Treeningud lastele, noortele ja täiskasvanutele — esimestest liigutustest suurte võitudeni.",
+  trainingButton: "Leia sobiv treening",
+  joinButton: "Liitu klubiga",
+  imageAlt:
+    "Maardu Finswimming Clubi sportlane lestaujumise treeningul",
+  scrollDown: "Liigu järgmise sektsioonini",
 
-    stats: {
-      founded: {
-        label: "Asutatud",
-        value: "1992. aastal",
-      },
-
-      athletes: {
-        label: "Rohkem kui",
-        value: "100+ sportlast",
-      },
-
-      medals: {
-        label: "50+ medalit",
-        value: "Rahvusvahelistel võistlustel",
-      },
-
-      estonia: {
-        label: "Esindame",
-        value: "Eestit kogu maailmas",
-      },
-    },
+  stats: {
+    athletes: "sportlast",
+    medals: "medalit",
+    experience: "aastat kogemust",
   },
+},
   aboutPreview: {
   eyebrow: "Klubist",
   title: "Esimestest liigutustest vees suurte võitudeni.",

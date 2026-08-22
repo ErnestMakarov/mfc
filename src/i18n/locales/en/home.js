@@ -1,36 +1,23 @@
 export default {
   hero: {
-    eyebrow: "Professional finswimming club",
-    titleFirst: "Maardu",
-    titleAccent: "Finswimming",
-    titleLast: "Club",
-    description: "A love for water from childhood",
-    aboutButton: "About club",
-    joinButton: "Join us",
-    imageAlt: "Maardu Finswimming Club athlete during training",
+  eyebrow: "Professional finswimming club · since 1992",
+  titleFirst: "More than",
+  titleAccent: "swimming.",
+  titleLast: "This is power.",
+  description:
+    "Training for children, teenagers and adults — from the first movements in water to remarkable victories.",
+  trainingButton: "Find your training",
+  joinButton: "Join the club",
+  imageAlt:
+    "Maardu Finswimming Club athlete during finswimming training",
+  scrollDown: "Continue to the next section",
 
-    stats: {
-      founded: {
-        label: "Founded",
-        value: "In 1992",
-      },
-
-      athletes: {
-        label: "More than",
-        value: "100+ athletes",
-      },
-
-      medals: {
-        label: "50+ medals",
-        value: "At international competitions",
-      },
-
-      estonia: {
-        label: "Representing",
-        value: "Estonia worldwide",
-      },
-    },
+  stats: {
+    athletes: "athletes",
+    medals: "medals",
+    experience: "years of experience",
   },
+},
   aboutPreview: {
   eyebrow: "About the club",
   title: "From the first movements in the water to great victories.",
