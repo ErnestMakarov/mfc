@@ -156,12 +156,12 @@ export default function Footer() {
 
             <div className="mt-5 flex flex-col items-start gap-3">
               <a
-                href="https://maps.google.com/?q=Ringi+tn+64+Maardu+Estonia"
+                href="https://maps.google.com/?q=Ringi+tn+64a+Maardu+Estonia"
                 target="_blank"
                 rel="noreferrer"
                 className="text-[12px] leading-[1.6] text-[#657083] transition-colors duration-300 hover:text-[#2A66EA] sm:text-[13px]"
               >
-                Ringi tn 64, Maardu
+                Ringi tn 64A, Maardu
               </a>
 
               <a

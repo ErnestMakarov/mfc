@@ -2,8 +2,8 @@ export default {
   hero: {
   eyebrow: "Professionaalne lestaujumisklubi · alates 1992",
   titleFirst: "Rohkem kui",
-  titleAccent: "ujumine.",
-  titleLast: "See on jõud.",
+  titleAccent: "klubi.",
+  titleLast: "See on elu.",
   description:
     "Treeningud lastele, noortele ja täiskasvanutele — esimestest liigutustest suurte võitudeni.",
   trainingButton: "Leia sobiv treening",

@@ -2,8 +2,8 @@ export default {
   hero: {
   eyebrow: "Professional finswimming club · since 1992",
   titleFirst: "More than",
-  titleAccent: "swimming.",
-  titleLast: "This is power.",
+  titleAccent: "club.",
+  titleLast: "This is life.",
   description:
     "Training for children, teenagers and adults — from the first movements in water to remarkable victories.",
   trainingButton: "Find your training",
