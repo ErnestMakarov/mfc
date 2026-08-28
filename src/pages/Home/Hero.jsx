@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import heroImage from "../../assets/images/hero-img.png";
+import heroImage from "../../assets/images/hero-img.webp";
 
 const stats = [
   {

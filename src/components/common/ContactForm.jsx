@@ -601,7 +601,7 @@ export default function ContactForm() {
                     </span>
                   </span>
 
-                  Ringi tn 64, Maardu, Estonia, 74112
+                  Ringi tn 64A, Maardu, Estonia, 74112
                 </a>
               </div>
             </div>
