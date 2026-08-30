@@ -3,7 +3,7 @@ export default {
   eyebrow: "Professional finswimming club · since 1992",
   titleFirst: "More than",
   titleAccent: "club.",
-  titleLast: "This is life.",
+  titleLast: "This is family.",
   description:
     "Training for children, teenagers and adults — from the first movements in water to remarkable victories.",
   trainingButton: "Find your training",
