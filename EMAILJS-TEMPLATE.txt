@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      @media only screen and (max-width: 640px) {
+        .email-container {
+          width: 100% !important;
+        }
+
+        .email-padding {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        .header-title {
+          font-size: 25px !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #f3f7fc;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #121722;
+    "
+  >
+    <div
+      style="
+        display: none;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+      "
+    >
+      Новая заявка с сайта Maardu Finswimming Club
+    </div>
+
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="width: 100%; background-color: #f3f7fc"
+    >
+      <tr>
+        <td align="center" style="padding: 32px 12px">
+          <table
+            role="presentation"
+            width="640"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            class="email-container"
+            style="
+              width: 640px;
+              max-width: 640px;
+              overflow: hidden;
+              background-color: #ffffff;
+              border: 1px solid #e1e8f2;
+              border-radius: 20px;
+              box-shadow: 0 16px 45px rgba(22, 50, 95, 0.12);
+            "
+          >
+            <!-- Шапка -->
+            <tr>
+              <td
+                class="email-padding"
+                style="
+                  padding: 30px 38px;
+                  background-color: #2a66ea;
+                "
+              >
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                >
+                  <tr>
+                    <td style="vertical-align: middle">
+                      <table
+                        role="presentation"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            align="center"
+                            style="
+                              width: 52px;
+                              height: 52px;
+                              border-radius: 14px;
+                              background-color: #ffffff;
+                              color: #2a66ea;
+                              font-size: 17px;
+                              font-weight: 800;
+                              letter-spacing: -0.5px;
+                            "
+                          >
+                            MFC
+                          </td>
+
+                          <td style="padding-left: 16px">
+                            <div
+                              style="
+                                color: #ffffff;
+                                font-size: 16px;
+                                font-weight: 700;
+                                line-height: 1.3;
+                              "
+                            >
+                              Maardu Finswimming Club
+                            </div>
+
+                            <div
+                              style="
+                                margin-top: 4px;
+                                color: #dbe7ff;
+                                font-size: 12px;
+                                line-height: 1.4;
+                              "
+                            >
+                              Форма на сайте
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td align="right" style="vertical-align: middle">
+                      <span
+                        style="
+                          display: inline-block;
+                          padding: 7px 11px;
+                          border: 1px solid rgba(255, 255, 255, 0.35);
+                          border-radius: 999px;
+                          color: #ffffff;
+                          font-size: 10px;
+                          font-weight: 700;
+                          letter-spacing: 1px;
+                        "
+                      >
+                        НОВАЯ ЗАЯВКА
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Заголовок -->
+            <tr>
+              <td
+                class="email-padding"
+                style="padding: 36px 38px 22px"
+              >
+                <div
+                  style="
+                    color: #2a66ea;
+                    font-size: 11px;
+                    font-weight: 800;
+                    letter-spacing: 1.3px;
+                    text-transform: uppercase;
+                  "
+                >
+                  Новое обращение с сайта
+                </div>
+
+                <h1
+                  class="header-title"
+                  style="
+                    margin: 10px 0 0;
+                    color: #121722;
+                    font-size: 30px;
+                    font-weight: 750;
+                    line-height: 1.2;
+                    letter-spacing: -0.8px;
+                  "
+                >
+                  Получена заявка на тренировку
+                </h1>
+
+                <p
+                  style="
+                    margin: 12px 0 0;
+                    color: #687589;
+                    font-size: 14px;
+                    line-height: 1.65;
+                  "
+                >
+                  Родитель заполнил форму на сайте Maardu
+                  Finswimming Club. Контактные данные и
+                  информация о ребёнке указаны ниже.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Данные заявки -->
+            <tr>
+              <td
+                class="email-padding"
+                style="padding: 8px 38px 30px"
+              >
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    width: 100%;
+                    overflow: hidden;
+                    background-color: #f8faff;
+                    border: 1px solid #e3eaf4;
+                    border-radius: 14px;
+                  "
+                >
+                  <tr>
+                    <td
+                      style="
+                        width: 38%;
+                        padding: 16px 18px;
+                        border-bottom: 1px solid #e3eaf4;
+                        color: #7b8798;
+                        font-size: 12px;
+                        font-weight: 600;
+                      "
+                    >
+                      Имя ребёнка
+                    </td>
+
+                    <td
+                      style="
+                        padding: 16px 18px;
+                        border-bottom: 1px solid #e3eaf4;
+                        color: #121722;
+                        font-size: 14px;
+                        font-weight: 700;
+                        word-break: break-word;
+                      "
+                    >
+                      {{child_name}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td
+                      style="
+                        width: 38%;
+                        padding: 16px 18px;
+                        border-bottom: 1px solid #e3eaf4;
+                        color: #7b8798;
+                        font-size: 12px;
+                        font-weight: 600;
+                      "
+                    >
+                      Возраст ребёнка
+                    </td>
+
+                    <td
+                      style="
+                        padding: 16px 18px;
+                        border-bottom: 1px solid #e3eaf4;
+                        color: #121722;
+                        font-size: 14px;
+                        font-weight: 700;
+                        word-break: break-word;
+                      "
+                    >
+                      {{child_age}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td
+                      style="
+                        width: 38%;
+                        padding: 16px 18px;
+                        border-bottom: 1px solid #e3eaf4;
+                        color: #7b8798;
+                        font-size: 12px;
+                        font-weight: 600;
+                      "
+                    >
+                      Имя родителя
+                    </td>
+
+                    <td
+                      style="
+                        padding: 16px 18px;
+                        border-bottom: 1px solid #e3eaf4;
+                        color: #121722;
+                        font-size: 14px;
+                        font-weight: 700;
+                        word-break: break-word;
+                      "
+                    >
+                      {{parent_name}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td
+                      style="
+                        width: 38%;
+                        padding: 16px 18px;
+                        border-bottom: 1px solid #e3eaf4;
+                        color: #7b8798;
+                        font-size: 12px;
+                        font-weight: 600;
+                      "
+                    >
+                      Телефон
+                    </td>
+
+                    <td
+                      style="
+                        padding: 16px 18px;
+                        border-bottom: 1px solid #e3eaf4;
+                        color: #121722;
+                        font-size: 14px;
+                        font-weight: 700;
+                        word-break: break-word;
+                      "
+                    >
+                      {{phone}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td
+                      style="
+                        width: 38%;
+                        padding: 16px 18px;
+                        color: #7b8798;
+                        font-size: 12px;
+                        font-weight: 600;
+                      "
+                    >
+                      Электронная почта
+                    </td>
+
+                    <td
+                      style="
+                        padding: 16px 18px;
+                        color: #2a66ea;
+                        font-size: 14px;
+                        font-weight: 700;
+                        word-break: break-word;
+                      "
+                    >
+                      {{email}}
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Сообщение -->
+            <tr>
+              <td
+                class="email-padding"
+                style="padding: 0 38px 30px"
+              >
+                <div
+                  style="
+                    margin-bottom: 9px;
+                    color: #7b8798;
+                    font-size: 11px;
+                    font-weight: 800;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                  "
+                >
+                  Сообщение родителя
+                </div>
+
+                <div
+                  style="
+                    min-height: 60px;
+                    padding: 18px;
+                    border-left: 4px solid #2a66ea;
+                    border-radius: 4px 12px 12px 4px;
+                    background-color: #f3f7ff;
+                    color: #334155;
+                    font-size: 14px;
+                    line-height: 1.7;
+                    white-space: pre-wrap;
+                    word-break: break-word;
+                  "
+                >
+                  {{message}}
+                </div>
+              </td>
+            </tr>
+
+            <!-- Согласие -->
+            <tr>
+              <td
+                class="email-padding"
+                style="padding: 0 38px 36px"
+              >
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    width: 100%;
+                    background-color: #ecfdf5;
+                    border: 1px solid #bbf7d0;
+                    border-radius: 12px;
+                  "
+                >
+                  <tr>
+                    <td
+                      style="
+                        width: 18px;
+                        padding: 14px 0 14px 16px;
+                        color: #059669;
+                        font-size: 16px;
+                        font-weight: 700;
+                      "
+                    >
+                      ✓
+                    </td>
+
+                    <td
+                      style="
+                        padding: 14px 16px 14px 10px;
+                        color: #047857;
+                        font-size: 12px;
+                        font-weight: 600;
+                        line-height: 1.5;
+                      "
+                    >
+                      Согласие с политикой конфиденциальности:
+                      {{consent}}
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Ответ -->
+            <tr>
+              <td
+                class="email-padding"
+                style="
+                  padding: 24px 38px;
+                  background-color: #121722;
+                "
+              >
+                <div
+                  style="
+                    color: #ffffff;
+                    font-size: 13px;
+                    font-weight: 700;
+                  "
+                >
+                  Чтобы ответить родителю
+                </div>
+
+                <div
+                  style="
+                    margin-top: 5px;
+                    color: #aab5c5;
+                    font-size: 12px;
+                    line-height: 1.5;
+                  "
+                >
+                  Нажмите «Ответить» в почтовом приложении.
+                  Ответ будет отправлен на адрес {{email}}.
+                </div>
+              </td>
+            </tr>
+
+            <!-- Подвал -->
+            <tr>
+              <td
+                align="center"
+                class="email-padding"
+                style="
+                  padding: 22px 38px;
+                  background-color: #ffffff;
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    color: #8994a4;
+                    font-size: 11px;
+                    line-height: 1.6;
+                  "
+                >
+                  Письмо отправлено автоматически через форму
+                  на сайте
+                  <strong style="color: #546174">
+                    maardufinswiming.ee
+                  </strong>
+                </p>
+
+                <p
+                  style="
+                    margin: 5px 0 0;
+                    color: #a5afbc;
+                    font-size: 10px;
+                    line-height: 1.5;
+                  "
+                >
+                  Maardu Finswimming Club · Ringi tn 64A,
+                  Maardu
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

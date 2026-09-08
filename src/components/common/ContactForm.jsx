@@ -226,6 +226,10 @@ const advantages = [
 const inputClass =
   "h-[54px] w-full rounded-[10px] border border-[#DEE5EF] bg-white px-12 text-[13px] font-medium text-[#121722] outline-none transition-all duration-300 placeholder:text-[#8A95A5] hover:border-[#C8D5E8] focus:border-[#2A66EA] focus:ring-4 focus:ring-[#2A66EA]/10";
 
+const EMAILJS_SERVICE_ID = "";
+const EMAILJS_TEMPLATE_ID = "";
+const EMAILJS_PUBLIC_KEY = "";
+
 export default function ContactForm() {
   const { t } = useTranslation("common");
   const formRef = useRef(null);
@@ -236,12 +240,27 @@ export default function ContactForm() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const form = formRef.current;
 
-    if (!serviceId || !templateId || !publicKey) {
+    if (!form) {
+      setStatus("error");
+      return;
+    }
+
+    if (
+      !EMAILJS_SERVICE_ID ||
+      !EMAILJS_TEMPLATE_ID ||
+      !EMAILJS_PUBLIC_KEY
+    ) {
       setStatus("notConfigured");
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    if (formData.get("website")) {
+      form.reset();
+      setStatus("success");
       return;
     }
 
@@ -250,17 +269,22 @@ export default function ContactForm() {
 
     try {
       await emailjs.sendForm(
-        serviceId,
-        templateId,
-        formRef.current,
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        form,
         {
-          publicKey,
+          publicKey: EMAILJS_PUBLIC_KEY,
+          limitRate: {
+            id: "mfc-contact-form",
+            throttle: 10000,
+          },
         },
       );
 
-      formRef.current.reset();
+      form.reset();
       setStatus("success");
-    } catch {
+    } catch (error) {
+      console.error("EmailJS form error:", error);
       setStatus("error");
     } finally {
       setIsSending(false);
@@ -314,6 +338,21 @@ export default function ContactForm() {
               onSubmit={handleSubmit}
               className="mt-8"
             >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+              >
+                <label htmlFor="contact-website">Website</label>
+
+                <input
+                  id="contact-website"
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               <div className="grid gap-3 sm:grid-cols-2">
                 <label className="relative block">
                   <span className="sr-only">
@@ -328,6 +367,7 @@ export default function ContactForm() {
                     type="text"
                     name="child_name"
                     required
+                    maxLength={80}
                     autoComplete="name"
                     placeholder={t(
                       "contactForm.fields.childName",
@@ -349,6 +389,7 @@ export default function ContactForm() {
                     type="text"
                     name="parent_name"
                     required
+                    maxLength={80}
                     autoComplete="name"
                     placeholder={t(
                       "contactForm.fields.parentName",
@@ -370,6 +411,7 @@ export default function ContactForm() {
                     type="text"
                     name="child_age"
                     required
+                    maxLength={10}
                     inputMode="decimal"
                     placeholder={t(
                       "contactForm.fields.childAge",
@@ -391,6 +433,7 @@ export default function ContactForm() {
                     type="tel"
                     name="phone"
                     required
+                    maxLength={30}
                     autoComplete="tel"
                     placeholder={t("contactForm.fields.phone")}
                     className={inputClass}
@@ -410,6 +453,7 @@ export default function ContactForm() {
                     type="email"
                     name="email"
                     required
+                    maxLength={120}
                     autoComplete="email"
                     placeholder={t("contactForm.fields.email")}
                     className={inputClass}
@@ -428,6 +472,7 @@ export default function ContactForm() {
                   <textarea
                     name="message"
                     rows="4"
+                    maxLength={1000}
                     placeholder={t(
                       "contactForm.fields.message",
                     )}
@@ -440,6 +485,7 @@ export default function ContactForm() {
                 <input
                   type="checkbox"
                   name="consent"
+                  value="yes"
                   required
                   className="peer sr-only"
                 />
