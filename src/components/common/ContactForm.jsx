@@ -226,9 +226,9 @@ const advantages = [
 const inputClass =
   "h-[54px] w-full rounded-[10px] border border-[#DEE5EF] bg-white px-12 text-[13px] font-medium text-[#121722] outline-none transition-all duration-300 placeholder:text-[#8A95A5] hover:border-[#C8D5E8] focus:border-[#2A66EA] focus:ring-4 focus:ring-[#2A66EA]/10";
 
-const EMAILJS_SERVICE_ID = "";
-const EMAILJS_TEMPLATE_ID = "";
-const EMAILJS_PUBLIC_KEY = "";
+const EMAILJS_SERVICE_ID = "service_xfub9eq";
+const EMAILJS_TEMPLATE_ID = "template_pesrg1l";
+const EMAILJS_PUBLIC_KEY = "1rWXEQCaKSIe2JqzW";
 
 export default function ContactForm() {
   const { t } = useTranslation("common");
