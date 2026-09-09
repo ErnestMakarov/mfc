@@ -57,6 +57,7 @@ team: {
         "Endine professionaalne sportlane.",
         "Kahekordne Euroopa meister aastatel 2012 ja 2014.",
         "Endine Euroopa rekordiomanik.",
+        "Treeneri kategooria EKR 4."
       ],
       specialties: [
         "MAK 2",
@@ -75,6 +76,7 @@ team: {
         "Üle 10 aasta kogemust allveespordis.",
         "Aktiivne sportlane.",
         "Eesti koondise liige ja Eesti meister.",
+        "Treeneri kategooria EKR 3." 
       ],
       specialties: [
         "MAK 4",

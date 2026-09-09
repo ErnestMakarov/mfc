@@ -57,6 +57,7 @@ team: {
         "Former professional athlete.",
         "Two-time European champion in 2012 and 2014.",
         "Former European record holder.",
+        "EKR 4 coaching qualification.",
       ],
       specialties: [
         "MAK 2",
@@ -75,6 +76,7 @@ team: {
         "More than 10 years in underwater sports.",
         "Active competitive athlete.",
         "Member of the national team and Estonian champion.",
+        "EKR 3 coaching qualification.",
       ],
       specialties: [
         "MAK 4",
