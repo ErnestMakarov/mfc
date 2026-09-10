@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maardufinswiming.ee/sitemap.xml
+Sitemap: https://finswimming.ee/sitemap.xml
