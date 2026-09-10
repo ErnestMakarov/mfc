@@ -37,6 +37,12 @@ const groups = [
     number: "07",
     level: "professional",
   },
+  {
+    key: "adultSwimming",
+    number: "08",
+    level: "adult",
+    hasTrainer: true,
+  },
 ];
 
 function PoolIcon() {
@@ -48,18 +54,21 @@ function PoolIcon() {
         strokeWidth="1.7"
         strokeLinecap="round"
       />
+
       <path
         d="M2 14C4 12.7 6 12.7 8 14C10 15.3 12 15.3 14 14C16 12.7 18 12.7 20 14C21 14.7 22 14.8 23 14.5"
         stroke="currentColor"
         strokeWidth="1.7"
         strokeLinecap="round"
       />
+
       <path
         d="M4 19C6 17.7 8 17.7 10 19C12 20.3 14 20.3 16 19C18 17.7 20 17.7 22 19"
         stroke="currentColor"
         strokeWidth="1.7"
         strokeLinecap="round"
       />
+
       <path
         d="M8 8V4H14V8"
         stroke="currentColor"
@@ -81,6 +90,7 @@ function ClockIcon() {
         stroke="currentColor"
         strokeWidth="1.7"
       />
+
       <path
         d="M12 7V12L15.5 14"
         stroke="currentColor"
@@ -102,11 +112,41 @@ function AgeIcon() {
         stroke="currentColor"
         strokeWidth="1.7"
       />
+
       <path
         d="M5 20V18C5 14.7 7.7 12 11 12H13C16.3 12 19 14.7 19 18V20"
         stroke="currentColor"
         strokeWidth="1.7"
         strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function TrainerIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle
+        cx="12"
+        cy="7"
+        r="3.5"
+        stroke="currentColor"
+        strokeWidth="1.7"
+      />
+
+      <path
+        d="M5 20V18.5C5 15.2 7.7 12.5 11 12.5H13C16.3 12.5 19 15.2 19 18.5V20"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+
+      <path
+        d="M8 15.5L12 18L16 15.5"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -218,6 +258,24 @@ export default function TrainingGroups() {
                       </p>
                     </div>
                   </div>
+
+                  {group.hasTrainer && (
+                    <div className="flex items-start gap-3 rounded-[13px] border border-[#E4EAF2] bg-white p-4 sm:col-span-2">
+                      <span className="h-5 w-5 shrink-0 text-[#2A66EA]">
+                        <TrainerIcon />
+                      </span>
+
+                      <div>
+                        <p className="text-[9px] font-bold uppercase tracking-[0.06em] text-[#929CAC]">
+                          {t("groups.labels.trainer")}
+                        </p>
+
+                        <p className="mt-1 text-[11px] font-bold leading-[1.4] text-[#121722] sm:text-[12px]">
+                          {t(`groups.items.${group.key}.trainer`)}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="mt-4 rounded-[14px] bg-[#F1F6FF] p-4">

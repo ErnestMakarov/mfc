@@ -36,6 +36,7 @@ groups: {
     age: "Vanus",
     pool: "Bassein",
     schedule: "Treeningajad",
+    trainer: "Treener",
   },
 
   items: {
@@ -128,6 +129,18 @@ groups: {
       description:
         "Kõrgeima sportliku meisterlikkuse rühm. Sportlased osalevad Euroopa ja maailmameistrivõistlustel ning treenivad individuaalse plaani järgi.",
     },
+    adultSwimming: {
+  name: "Täiskasvanute ujumine",
+  audience: "Ujumise õppimine algusest peale",
+  age: "Täiskasvanud",
+  pool: "Suur bassein",
+  trainer: "Maria Zavjalova",
+  schedule: [
+    "Teisipäev ja neljapäev — 20.15",
+  ],
+  description:
+    "Täiskasvanutele mõeldud ujumistunnid. Arendatakse põhioskusi ja õpitakse ujumistehnikat algusest peale. Treeningud aitavad tunda end vees enesekindlalt ja rahulikult.",
+},
   },
 
   contact: {

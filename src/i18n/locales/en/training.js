@@ -36,6 +36,7 @@ groups: {
     age: "Age",
     pool: "Pool",
     schedule: "Schedule",
+    trainer: "Coach",
   },
 
   items: {
@@ -127,6 +128,18 @@ groups: {
       ],
       description:
         "A high-performance group whose athletes compete at European and World Championships. Each athlete follows an individual preparation plan.",
+    },
+        adultSwimming: {
+      name: "Adult swimming",
+      audience: "Learn to swim from scratch",
+      age: "Adults",
+      pool: "Large pool",
+      trainer: "Maria Zavjalova",
+      schedule: [
+        "Tuesday and Thursday — 20:15",
+      ],
+      description:
+        "Swimming classes for adults. Develop basic skills and learn swimming technique from scratch. The training helps build confidence and feel calm in the water.",
     },
   },
 
