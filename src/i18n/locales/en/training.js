@@ -121,9 +121,8 @@ groups: {
       age: "Professional athletes",
       pool: "Large pool",
       schedule: [
-        "Monday and Wednesday — 20:00–21:30",
+        "Monday, Wednesday and Friday — 20:00–21:30",
         "Tuesday and Thursday — 18:30–20:00",
-        "Friday — 19:00–20:30",
         "Physical training in the gym — twice a week",
       ],
       description:

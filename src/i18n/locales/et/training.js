@@ -121,9 +121,8 @@ groups: {
       age: "Professionaalsed sportlased",
       pool: "Suur bassein",
       schedule: [
-        "Esmaspäev ja kolmapäev — 20:00–21:30",
+        "Esmaspäev, kolmapäev ja reede — 20:00–21:30",
         "Teisipäev ja neljapäev — 18:30–20:00",
-        "Reede — 19:00–20:30",
         "Üldfüüsiline treening saalis — 2 korda nädalas",
       ],
       description:

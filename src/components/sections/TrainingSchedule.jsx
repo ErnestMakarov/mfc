@@ -108,7 +108,7 @@ const schedule = {
       pool: "large",
     },
     {
-      time: "19:00–20:30",
+      time: "20:00–21:30",
       group: "MAK 1",
       pool: "large",
     },
