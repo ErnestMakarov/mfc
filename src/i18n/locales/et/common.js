@@ -5,6 +5,7 @@ export default {
     about: "Klubist",
     coaches: "Treenerid",
     training: "Treeningud",
+    merch: "Klubivorm",
     news: "Uudised",
     contacts: "Kontakt",
     documents: "Dokumendid",

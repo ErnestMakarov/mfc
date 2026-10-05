@@ -5,6 +5,7 @@ export default {
     about: "О клубе",
     coaches: "Тренеры",
     training: "Тренировки",
+    merch: "Мерч",
     news: "Новости",
     contacts: "Контакты",
     documents: "Документы",

@@ -24,6 +24,11 @@ const navigation = [
     path: "/contacts",
     key: "contacts",
   },
+  {
+    path: "/documents",
+    key: "documents",
+    labelKey: "header.documents",
+  },
 ];
 
 const INSTAGRAM_URL = "https://www.instagram.com/mfc_est/";
@@ -159,7 +164,7 @@ export default function Footer() {
                     ].join(" ")
                   }
                 >
-                  {t(`footer.links.${item.key}`)}
+                  {t(item.labelKey || `footer.links.${item.key}`)}
 
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#2A66EA] transition-[width] duration-300 group-hover:w-full" />
                 </NavLink>

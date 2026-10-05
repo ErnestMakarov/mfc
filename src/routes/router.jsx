@@ -10,6 +10,8 @@ import Contacts from "../pages/Contacts/Contacts.jsx";
 import Documents from "../pages/Documents/Documents.jsx";
 import Privacy from "../pages/Privacy/Privacy.jsx";
 
+import { MerchRoute, MerchProductRoute } from "../pages/Merch/MerchRoutes.jsx";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +32,14 @@ export const router = createBrowserRouter([
       {
         path: "training",
         element: <Training />,
+      },
+      {
+        path: "merch",
+        element: <MerchRoute />,
+      },
+      {
+        path: "merch/:slug",
+        element: <MerchProductRoute />,
       },
       {
         path: "news",

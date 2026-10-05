@@ -8,6 +8,7 @@ const navItems = [
   { path: "/about", key: "about" },
   { path: "/coaches", key: "coaches" },
   { path: "/training", key: "training" },
+  { path: "/merch", key: "merch" },
   { path: "/news", key: "news" },
   { path: "/contacts", key: "contacts" },
 ];
@@ -89,7 +90,7 @@ export default function Header() {
     }
 
     function handleResize() {
-      if (window.innerWidth >= 1200) {
+      if (window.innerWidth >= 1320) {
         setIsMenuOpen(false);
       }
     }
@@ -114,7 +115,7 @@ export default function Header() {
             : "border-[#E6EAF1] bg-white shadow-none",
         ].join(" ")}
       >
-        <div className="page-container grid h-full grid-cols-[1fr_auto] items-center gap-5 min-[1200px]:grid-cols-[1fr_auto_1fr]">
+        <div className="page-container grid h-full grid-cols-[1fr_auto] items-center gap-5 min-[1320px]:grid-cols-[1fr_auto_1fr]">
           <NavLink
             to="/"
             onClick={closeMenu}
@@ -133,7 +134,7 @@ export default function Header() {
           </NavLink>
 
           <nav
-            className="hidden items-center justify-center gap-[18px] min-[1200px]:flex min-[1450px]:gap-7 min-[1650px]:gap-9"
+            className="hidden items-center justify-center gap-[18px] min-[1320px]:flex min-[1450px]:gap-7 min-[1650px]:gap-9"
             aria-label={t("header.navigation")}
           >
             {navItems.map((item) => (
@@ -174,14 +175,14 @@ export default function Header() {
           <div className="flex items-center justify-end gap-2 min-[1450px]:gap-3">
             <NavLink
               to="/contacts"
-              className="hidden h-11 items-center justify-center whitespace-nowrap rounded-[9px] bg-[#2A66EA] px-5 text-[11px] font-extrabold uppercase tracking-[0.03em] !text-white shadow-[0_8px_24px_rgba(42,102,234,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2059D5] hover:shadow-[0_12px_30px_rgba(42,102,234,0.28)] min-[1200px]:flex min-[1450px]:h-[46px] min-[1450px]:px-7 min-[1450px]:text-[12px]"
+              className="hidden h-11 items-center justify-center whitespace-nowrap rounded-[9px] bg-[#2A66EA] px-5 text-[11px] font-extrabold uppercase tracking-[0.03em] !text-white shadow-[0_8px_24px_rgba(42,102,234,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2059D5] hover:shadow-[0_12px_30px_rgba(42,102,234,0.28)] min-[1320px]:flex min-[1450px]:h-[46px] min-[1450px]:px-7 min-[1450px]:text-[12px]"
             >
               {t("header.join")}
             </NavLink>
 
             <div
               ref={languageRef}
-              className="relative hidden min-[1200px]:block"
+              className="relative hidden min-[1320px]:block"
             >
               <button
                 type="button"
@@ -257,7 +258,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setIsMenuOpen(true)}
-              className="group flex h-10 w-10 items-center justify-center text-[#121722] min-[1200px]:hidden"
+              className="group flex h-10 w-10 items-center justify-center text-[#121722] min-[1320px]:hidden"
               aria-label={t("header.openMenu")}
               aria-expanded={isMenuOpen}
             >
@@ -278,7 +279,7 @@ export default function Header() {
           "fixed inset-0 z-[100] h-[100dvh] w-screen",
           "bg-white/[0.96] backdrop-blur-2xl",
           "transition-all duration-500",
-          "ease-[cubic-bezier(0.76,0,0.24,1)] min-[1200px]:hidden",
+          "ease-[cubic-bezier(0.76,0,0.24,1)] min-[1320px]:hidden",
           isMenuOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-8 opacity-0",

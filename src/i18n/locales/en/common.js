@@ -5,6 +5,7 @@ export default {
     about: "About",
     coaches: "Coaches",
     training: "Training",
+    merch: "Clubwear",
     news: "News",
     contacts: "Contacts",
     documents: "Documents",
