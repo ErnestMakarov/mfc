@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import heroImage from "../../assets/images/hero-img.webp";
+import "./hero-desktop.css";
 
 const stats = [
   {
@@ -47,7 +48,8 @@ function ScrollIcon() {
 }
 
 export default function Hero() {
-  const { t } = useTranslation("home");
+  const { t, i18n } = useTranslation("home");
+  const language = i18n.resolvedLanguage?.split("-")[0] || "et";
 
   function scrollToContent() {
     const nextSection =
@@ -55,7 +57,9 @@ export default function Hero() {
 
     if (nextSection) {
       nextSection.scrollIntoView({
-        behavior: "smooth",
+        behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches
+          ? "instant"
+          : "smooth",
         block: "start",
       });
     }
@@ -66,99 +70,58 @@ export default function Hero() {
       id="home-hero"
       className="relative isolate overflow-hidden bg-white"
     >
-      <div className="relative hidden min-h-[max(760px,100svh)] lg:block">
-        <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt={t("hero.imageAlt")}
-            className="h-full w-full object-cover object-center"
-            fetchPriority="high"
-            draggable="false"
+      <div className="home-hero-desktop" data-language={language}>
+        <div className="home-hero-stage page-container">
+          <span className="home-hero-monogram" aria-hidden="true">MFC</span>
+          <div
+            className="home-hero-art"
+            role="img"
+            aria-label={t("hero.imageAlt")}
           />
 
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-[72px] bg-gradient-to-b from-white/75 via-white/20 to-transparent" />
-
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-[62%] bg-gradient-to-r from-white via-white/95 via-[42%] to-transparent" />
-
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[80px] bg-gradient-to-t from-white/25 to-transparent" />
-        </div>
-
-        <div className="page-container relative z-10 flex min-h-[max(760px,100svh)] flex-col pb-10 pt-[clamp(115px,12vh,165px)]">
-          <div className="max-w-[660px]">
-            <p className="home-hero-reveal text-[11px] font-extrabold uppercase leading-[1.5] tracking-[0.075em] text-[#2A66EA] xl:text-[13px]">
+          <div className="home-hero-copy">
+            <p className="home-hero-eyebrow home-hero-reveal">
               {t("hero.eyebrow")}
             </p>
 
-            <h1 className="home-hero-reveal home-hero-delay-1 mt-5 text-[clamp(64px,5.2vw,100px)] font-extrabold uppercase leading-[0.88] tracking-[-0.065em] text-[#111722]">
-              <span className="block">
-                {t("hero.titleFirst")}
-              </span>
-
-              <span className="block text-[#2A66EA]">
-                {t("hero.titleAccent")}
-              </span>
-
-              <span className="block">
-                {t("hero.titleLast")}
-              </span>
+            <h1 className="home-hero-title home-hero-reveal home-hero-delay-1">
+              <span>{t("hero.titleFirst")}</span>
+              <span className="home-hero-title-accent">{t("hero.titleAccent")}</span>
+              <span>{t("hero.titleLast")}</span>
             </h1>
 
-            <p className="home-hero-reveal home-hero-delay-2 mt-7 max-w-[530px] text-[14px] font-medium leading-[1.7] text-[#667184] xl:text-[16px]">
+            <p className="home-hero-description home-hero-reveal home-hero-delay-2">
               {t("hero.description")}
             </p>
 
-            <div className="home-hero-reveal home-hero-delay-3 mt-9 flex items-center gap-3">
-              <Link
-                to="/training"
-                className="group flex h-[56px] min-w-[220px] items-center justify-center gap-2 rounded-[9px] bg-[#2A66EA] px-7 text-[11px] font-extrabold uppercase tracking-[0.04em] !text-white shadow-[0_14px_35px_rgba(42,102,234,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2059D5] hover:shadow-[0_18px_42px_rgba(42,102,234,0.32)]"
-              >
+            <div className="home-hero-actions home-hero-reveal home-hero-delay-3">
+              <Link to="/training" className="home-hero-cta home-hero-cta-primary">
                 {t("hero.trainingButton")}
-
-                <span className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1">
-                  <ArrowIcon />
-                </span>
+                <span><ArrowIcon /></span>
               </Link>
-
-              <Link
-                to="/contacts"
-                className="flex h-[56px] min-w-[190px] items-center justify-center rounded-[9px] border border-[#BCCAE0] bg-white/75 px-7 text-[11px] font-extrabold uppercase tracking-[0.04em] text-[#121722] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2A66EA] hover:bg-white hover:text-[#2A66EA]"
-              >
+              <Link to="/contacts" className="home-hero-cta home-hero-cta-secondary">
                 {t("hero.joinButton")}
               </Link>
             </div>
-
-            <div className="home-hero-reveal home-hero-delay-4 mt-10 flex items-stretch">
-              {stats.map((stat, index) => (
-                <div
-                  key={stat.key}
-                  className={[
-                    "pr-8",
-                    index > 0
-                      ? "border-l border-[#CAD3E0] px-8"
-                      : "",
-                  ].join(" ")}
-                >
-                  <p className="text-[18px] font-extrabold leading-none tracking-[-0.035em] text-[#121722]">
-                    {stat.value}
-                  </p>
-
-                  <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.055em] text-[#7D8796]">
-                    {t(`hero.stats.${stat.key}`)}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
+        </div>
 
+        <div className="home-hero-bottom page-container home-hero-reveal home-hero-delay-4">
+          <dl className="home-hero-statistics">
+            {stats.map((stat) => (
+              <div key={stat.key} className="home-hero-statistic">
+                <dt>{t(`hero.stats.${stat.key}`)}</dt>
+                <dd>{stat.value}</dd>
+              </div>
+            ))}
+          </dl>
           <button
             type="button"
             onClick={scrollToContent}
             aria-label={t("hero.scrollDown")}
-            className="absolute bottom-[72px] left-1/2 flex h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border border-[#2A66EA]/20 bg-white/75 text-[#2A66EA] shadow-[0_8px_24px_rgba(20,50,100,0.08)] backdrop-blur-md transition-all duration-300 hover:translate-y-1 hover:border-[#2A66EA]/40 hover:bg-white"
+            className="home-hero-scroll"
           >
-            <span className="h-5 w-5">
-              <ScrollIcon />
-            </span>
+            <ScrollIcon />
           </button>
         </div>
       </div>
