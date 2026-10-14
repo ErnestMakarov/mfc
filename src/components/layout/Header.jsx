@@ -11,6 +11,7 @@ const navItems = [
   { path: "/merch", key: "merch" },
   { path: "/news", key: "news" },
   { path: "/contacts", key: "contacts" },
+  { path: "/documents", key: "documents"}
 ];
 
 const languages = [
