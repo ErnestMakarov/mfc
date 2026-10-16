@@ -108,7 +108,8 @@ export default {
     "fields": {
       "first_name": "Имя",
       "last_name": "Фамилия",
-      "email": "Email"
+      "email": "Email",
+      "phone": "Номер телефона"
     },
     "consent": "Согласен на обработку данных для ответа на заявку.",
     "privacy": "Политика конфиденциальности",

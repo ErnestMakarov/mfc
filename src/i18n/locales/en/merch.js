@@ -106,7 +106,8 @@ export default {
     "fields": {
       "first_name": "First name",
       "last_name": "Last name",
-      "email": "Email"
+      "email": "Email",
+      "phone": "Phone number",
     },
     "consent": "I agree to my details being used to respond to this request.",
     "privacy": "Privacy policy",

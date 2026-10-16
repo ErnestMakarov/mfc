@@ -106,7 +106,8 @@ export default {
     "fields": {
       "first_name": "Eesnimi",
       "last_name": "Perekonnanimi",
-      "email": "E-post"
+      "email": "E-post",
+      "phone": "Telefoninumber",
     },
     "consent": "Nõustun oma andmete töötlemisega ostusoovile vastamiseks.",
     "privacy": "Privaatsuspoliitika",
