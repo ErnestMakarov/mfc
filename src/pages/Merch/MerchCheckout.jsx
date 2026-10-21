@@ -57,16 +57,16 @@ export default function MerchCheckout() {
     const et = i18n.getFixedT("et", "merch");
     const requestId = `MFC-${typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`}`;
     const submittedAt = new Intl.DateTimeFormat("et-EE", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/Tallinn" }).format(new Date());
-    const ru = i18n.getFixedT("ru", "merch");
 
 const orderItems = orderLines
   .map((line, index) => {
-    const name = ru(`products.${line.product.key}.name`);
-    const size = sizeLabel(line.product, line.size, ru);
+    const name = et(`products.${line.product.key}.name`);
+    const size = sizeLabel(line.product, line.size, et);
 
-    return `${index + 1}. ${name}\nРазмер: ${size}\nКоличество: ${line.quantity}`;
+    return `${index + 1}. ${name}\nSuurus: ${size}\nKogus: ${line.quantity}`;
   })
   .join("\n\n");
+
     const params = {
       ...values,
       customer_name: `${values.first_name} ${values.last_name}`,
