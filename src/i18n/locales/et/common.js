@@ -6,6 +6,7 @@ export default {
     coaches: "Treenerid",
     training: "Treeningud",
     merch: "Klubivorm",
+    cart: "Ostukorv",
     news: "Uudised",
     contacts: "Kontakt",
     documents: "Dokumendid",

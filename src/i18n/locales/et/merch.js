@@ -121,6 +121,7 @@ export default {
       "size": "Palun vali suurus.",
       "required": "Palun sisesta ees- või perekonnanimi, mitte ainult tühikud.",
       "email": "Palun sisesta korrektne e-posti aadress.",
+      "phone": "Sisestage korrektne telefoninumber.",
       "consent": "Palun nõustu andmete töötlemisega."
     },
     "status": {
@@ -128,6 +129,43 @@ export default {
       "rateLimited": "Palun oota enne uut saatmist 10 sekundit.",
       "notConfigured": "Vormi kaudu päringute saatmine ei ole veel saadaval. Vormiriiete tellimiseks võta klubiga ühendust."
     }
+  },
+  "cart": {
+    "title": "Ostukorv",
+    "description": "Kontrollige valitud klubivormi ja koguseid enne päringu saatmist.",
+    "clear": "Tühjenda ostukorv",
+    "emptyTitle": "Ostukorv on tühi",
+    "emptyDescription": "Valige kataloogist tooted ja lisage need ostukorvi.",
+    "backToCatalog": "Vaata kataloogi",
+    "itemsLabel": "Ostukorvi tooted",
+    "quantity": "Kogus",
+    "decreaseQuantity": "Vähenda kogust",
+    "increaseQuantity": "Suurenda kogust",
+    "remove": "Eemalda",
+    "summary": "Teie tellimus",
+    "itemCount": "Tooteid kokku",
+    "totalPrice": "Hind",
+    "summaryNote": "Klubi kinnitab lõpliku hinna, saadavuse ja tähtaja pärast päringu saamist.",
+    "checkout": "Esita päring",
+    "continueShopping": "Jätka ostlemist",
+    "addTitle": "Lisa ostukorvi",
+    "addDescription": "Valige suurus ja kogus. Kontaktandmed saate sisestada järgmisel sammul.",
+    "addToCart": "Lisa ostukorvi",
+    "added": "Toode lisatud. Ostukorvis on {{count}} ühikut.",
+    "goToCart": "Ava ostukorv",
+    "priceNote": "Veebimakset pole vaja. Klubi kinnitab hinna ja kättesaamise eraldi.",
+    "errors": { "size": "Valige kõigepealt suurus." },
+    "checkoutDescription": "Jätke oma kontaktandmed — klubi saab ühe päringu kõigi ostukorvi toodetega.",
+    "checkoutEmpty": "Enne päringu saatmist lisage tooted ostukorvi.",
+    "contactDetails": "Kontaktandmed",
+    "contactDescription": "Eesnimi, perekonnanimi ja e-post on kohustuslikud. Telefon on valikuline.",
+    "sendRequest": "Saada päring",
+    "noPaymentNote": "See on päring, mitte makse. Klubi kinnitab hinna, saadavuse ja kättesaamise eraldi.",
+    "editCart": "Muuda ostukorvi",
+    "successTitle": "Päring saadetud",
+    "successDescription": "Aitäh! Klubi sai teie päringu ja võtab tellimuse üksikasjade kinnitamiseks ühendust.",
+    "requestId": "Päringu number",
+    "sentItems": "Päringus ühikuid: {{count}}"
   },
   "products": {
     "kidsTshirt": {

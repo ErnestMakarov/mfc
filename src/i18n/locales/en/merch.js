@@ -121,6 +121,7 @@ export default {
       "size": "Please choose a size.",
       "required": "Please enter your first or last name, not just spaces.",
       "email": "Please enter a valid email address.",
+      "phone": "Enter a valid phone number.",
       "consent": "Please agree to the use of your details."
     },
     "status": {
@@ -128,6 +129,43 @@ export default {
       "rateLimited": "Please wait 10 seconds before sending again.",
       "notConfigured": "Requests through this form are not available yet. Contact the club to order clubwear."
     }
+  },
+  "cart": {
+    "title": "Shopping cart",
+    "description": "Review your selected clubwear and quantities before sending the request.",
+    "clear": "Clear cart",
+    "emptyTitle": "Your cart is empty",
+    "emptyDescription": "Choose products from the catalogue and add them here.",
+    "backToCatalog": "Browse catalogue",
+    "itemsLabel": "Items in cart",
+    "quantity": "Quantity",
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity",
+    "remove": "Remove",
+    "summary": "Your order",
+    "itemCount": "Total units",
+    "totalPrice": "Price",
+    "summaryNote": "The club will confirm the final price, availability and timing after receiving your request.",
+    "checkout": "Continue to request",
+    "continueShopping": "Continue shopping",
+    "addTitle": "Add to cart",
+    "addDescription": "Choose a size and quantity. You will enter contact details in the next step.",
+    "addToCart": "Add to cart",
+    "added": "Item added. Cart units: {{count}}.",
+    "goToCart": "Open cart",
+    "priceNote": "No online payment is required. The club will confirm the price and collection separately.",
+    "errors": { "size": "Please choose a size first." },
+    "checkoutDescription": "Leave your contact details — the club will receive one request with all items in your cart.",
+    "checkoutEmpty": "Add products to your cart before sending a request.",
+    "contactDetails": "Contact details",
+    "contactDescription": "First name, last name and email are required. Phone is optional.",
+    "sendRequest": "Send request",
+    "noPaymentNote": "This is a request, not a payment. The club will confirm price, availability and collection separately.",
+    "editCart": "Edit cart",
+    "successTitle": "Request sent",
+    "successDescription": "Thank you! The club has received your request and will contact you to confirm the order details.",
+    "requestId": "Request number",
+    "sentItems": "Units in request: {{count}}"
   },
   "products": {
     "kidsTshirt": {

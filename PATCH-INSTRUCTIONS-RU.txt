@@ -1,0 +1,20 @@
+PATCH ДЛЯ ОРИГИНАЛЬНОЙ ПАПКИ MFC
+
+Этот архив содержит только изменённые и новые файлы корзины, а не копию всего проекта.
+
+КАК ПРИМЕНИТЬ:
+1. Сначала открой оригинальную папку проекта MFC, в которой уже есть .git и package.json.
+2. Распакуй содержимое этого ZIP прямо в корень этой папки с заменой файлов. Не распаковывай в новую вложенную папку.
+3. НЕ удаляй папку .git и НЕ заменяй свой .env.local.
+4. В терминале из корня проекта выполни: git status
+5. Проверь изменения, затем npm ci и npm run dev.
+6. Когда убедишься, что всё работает: git add -A && git commit -m "Add merch cart and checkout" && git push.
+
+EMAILJS:
+- В EmailJS создай отдельный шаблон для заявок мерча и вставь HTML из docs/merch/emailjs-template.html.
+- В настройках шаблона установи To Email на почту клуба и Reply To = {{reply_to}}.
+- Укажи Template ID в .env.local как VITE_EMAILJS_MERCH_TEMPLATE_ID=template_xxxxx.
+- Для Vercel добавь ту же переменную в Project Settings → Environment Variables и сделай redeploy.
+- В шаблоне есть поля товаров, размера, количества, имени, фамилии, email и телефона.
+
+Не публикуй секретные ключи. EmailJS Public Key можно использовать на клиенте; Private Key нельзя помещать в VITE_-переменные.

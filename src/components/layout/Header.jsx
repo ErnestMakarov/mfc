@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import logo from "../../assets/images/header-logo.png";
+import { useMerchCart } from "../../context/MerchCartContext.jsx";
 
 const navItems = [
   { path: "/about", key: "about" },
@@ -22,6 +23,7 @@ const languages = [
 
 export default function Header() {
   const { t, i18n } = useTranslation("common");
+  const { count } = useMerchCart();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
@@ -142,6 +144,7 @@ export default function Header() {
               <NavLink
                 key={item.path}
                 to={item.path}
+                end={item.path === "/merch"}
                 className={({ isActive }) =>
                   [
                     "group relative whitespace-nowrap py-3",
@@ -174,6 +177,24 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center justify-end gap-2 min-[1450px]:gap-3">
+            <NavLink
+              to="/merch/cart"
+              onClick={closeMenu}
+              className={({ isActive }) => [
+                "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-[9px]",
+                "transition-colors duration-200 hover:bg-[#F0F4FA]",
+                isActive ? "text-[#2A66EA]" : "text-[#121722]",
+              ].join(" ")}
+              aria-label={`${t("header.cart")}${count > 0 ? ` (${count})` : ""}`}
+              title={t("header.cart")}
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className="h-[22px] w-[22px]" aria-hidden="true">
+                <path d="M5 8h14l1 12H4L5 8Z" />
+                <path d="M9 9V6a3 3 0 0 1 6 0v3" />
+              </svg>
+              {count > 0 && <span className="absolute right-0.5 top-0.5 flex h-[17px] min-w-[17px] items-center justify-center rounded-full bg-[#2A66EA] px-1 text-[9px] font-extrabold leading-none text-white">{count > 99 ? "99+" : count}</span>}
+            </NavLink>
+
             <NavLink
               to="/contacts"
               className="hidden h-11 items-center justify-center whitespace-nowrap rounded-[9px] bg-[#2A66EA] px-5 text-[11px] font-extrabold uppercase tracking-[0.03em] !text-white shadow-[0_8px_24px_rgba(42,102,234,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2059D5] hover:shadow-[0_12px_30px_rgba(42,102,234,0.28)] min-[1320px]:flex min-[1450px]:h-[46px] min-[1450px]:px-7 min-[1450px]:text-[12px]"
@@ -361,6 +382,18 @@ export default function Header() {
                 )}
               </NavLink>
             ))}
+            <NavLink
+              to="/merch/cart"
+              onClick={closeMenu}
+              style={{ transitionDelay: isMenuOpen ? `${100 + navItems.length * 55}ms` : "0ms" }}
+              className={({ isActive }) => [
+                "group relative text-center text-[15px] font-bold tracking-[-0.02em] transition-all duration-500",
+                isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
+                isActive ? "text-[#2A66EA]" : "text-[#121722] hover:text-[#2A66EA]",
+              ].join(" ")}
+            >
+              {t("header.cart")}{count > 0 ? ` (${count})` : ""}
+            </NavLink>
           </nav>
 
           <div

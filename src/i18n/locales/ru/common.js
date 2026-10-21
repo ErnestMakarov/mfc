@@ -6,6 +6,7 @@ export default {
     coaches: "Тренеры",
     training: "Тренировки",
     merch: "Мерч",
+    cart: "Корзина",
     news: "Новости",
     contacts: "Контакты",
     documents: "Документы",

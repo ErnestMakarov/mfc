@@ -1,364 +1,71 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import emailjs from "@emailjs/browser";
-import { merchEmailConfig } from "../../config/merchEmail.js";
 import { sizeLabel } from "../../data/merchProducts.js";
+import { useMerchCart } from "../../context/MerchCartContext.jsx";
 import MerchIcon from "./MerchIcon.jsx";
 
 export default function MerchOrderForm({ product }) {
-  const { t, i18n } = useTranslation("merch");
-  const formRef = useRef(null);
-  const sending = useRef(false);
+  const { t } = useTranslation("merch");
+  const { addItem, count } = useMerchCart();
   const [size, setSize] = useState("");
-  const [status, setStatus] = useState("idle");
-  const [errors, setErrors] = useState({});
-  const [receipt, setReceipt] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const [error, setError] = useState(false);
+  const [added, setAdded] = useState(false);
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    if (sending.current) return;
-
-    const form = formRef.current;
-    const data = new FormData(form);
-
-    // Honeypot: silently ignore bot submissions.
-    if (data.get("website")) return;
-
-    const values = Object.fromEntries(
-      ["first_name", "last_name", "email", "phone"].map((key) => [
-        key,
-        String(data.get(key) || "").trim(),
-      ])
-    );
-
-    const invalid = {};
-
-    if (!product.sizes.includes(size)) invalid.size = "size";
-
-    for (const field of ["first_name", "last_name"]) {
-      if (
-        !values[field] ||
-        values[field].length > 80 ||
-        /[\r\n]/.test(values[field])
-      ) {
-        invalid[field] = "required";
-      }
-    }
-
-    if (
-      !values.email ||
-      values.email.length > 120 ||
-      form.elements.email.validity.typeMismatch ||
-      /[\s\r\n]/.test(values.email)
-    ) {
-      invalid.email = "email";
-    }
-
-    // Phone is optional. If provided, validate a common international format.
-    const phoneDigits = values.phone.replace(/\D/g, "");
-    if (
-      values.phone &&
-      (
-        values.phone.length > 25 ||
-        !/^[+\d().\-\s]+$/.test(values.phone) ||
-        phoneDigits.length < 7 ||
-        phoneDigits.length > 15
-      )
-    ) {
-      invalid.phone = "phone";
-    }
-
-    if (!data.get("consent")) invalid.consent = "consent";
-
-    setErrors(invalid);
-
-    if (Object.keys(invalid).length) {
-      const first = Object.keys(invalid)[0];
-      if (first === "size") {
-        form.querySelector('input[name="size"]')?.focus();
-      } else {
-        form.elements.namedItem(first)?.focus();
-      }
-      return;
-    }
-
-    if (!merchEmailConfig.templateId) {
-      setStatus("notConfigured");
-      return;
-    }
-
-    sending.current = true;
-    setStatus("sending");
-
-    // Product, SKU and size come from the catalogue, not hidden form inputs.
-    const language = i18n.resolvedLanguage?.split("-")[0] || "et";
-    const et = i18n.getFixedT("et", "merch");
-    const reference = `MFC-${crypto.randomUUID()}`;
-
-    const params = {
-      ...values,
-      customer_name: `${values.first_name} ${values.last_name}`,
-      reply_to: values.email,
-      product_name: et(`products.${product.key}.name`),
-      product_name_local: t(`products.${product.key}.name`),
-      product_id: product.slug,
-      product_sku: product.sku,
-      product_model: product.model,
-      product_size: sizeLabel(product, size, et),
-      product_color: et(`colors.${product.color}`),
-      quantity: "1",
-      price: et("priceOnRequest"),
-      product_url: new URL(`/merch/${product.slug}`, window.location.origin).href,
-      language: language.toUpperCase(),
-      request_id: reference,
-      submitted_at: new Intl.DateTimeFormat("et-EE", {
-        dateStyle: "medium",
-        timeStyle: "short",
-        timeZone: "Europe/Tallinn",
-      }).format(new Date()),
-      consent: "Jah",
-    };
-
-    try {
-      await emailjs.send(
-        merchEmailConfig.serviceId,
-        merchEmailConfig.templateId,
-        params,
-        {
-          publicKey: merchEmailConfig.publicKey,
-          limitRate: { id: "mfc-merch-form", throttle: 10000 },
-        }
-      );
-
-      setReceipt({ size, reference });
-      setStatus("success");
-      form.reset();
-      setSize("");
-    } catch (error) {
-      setStatus(error?.status === 429 ? "rateLimited" : "error");
-    } finally {
-      sending.current = false;
-    }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="merch-success" role="status" aria-live="polite">
-        <span className="merch-success-icon">
-          <MerchIcon name="check" />
-        </span>
-        <h2>{t("form.successTitle")}</h2>
-        <p>{t("form.successDescription")}</p>
-        <div className="merch-success-summary">
-          <strong>{t(`products.${product.key}.name`)}</strong>
-          <span>
-            {t("form.size")}: {sizeLabel(product, receipt.size, t)}
-          </span>
-        </div>
-        <button
-          type="button"
-          className="merch-button merch-button-secondary"
-          onClick={() => {
-            setStatus("idle");
-            setReceipt(null);
-          }}
-        >
-          {t("form.another")}
-        </button>
-      </div>
-    );
+  function handleAdd() {
+    if (!product.sizes.includes(size)) { setError(true); return; }
+    addItem(product.slug, size, quantity);
+    setError(false);
+    setAdded(true);
   }
 
   return (
-    <form
-      ref={formRef}
-      onSubmit={handleSubmit}
-      noValidate
-      className="merch-order-form"
-      aria-busy={status === "sending"}
-    >
-      <fieldset disabled={status === "sending"} className="merch-form-fields">
-        <fieldset className="merch-size-field">
-          <legend>
-            {t("form.size")} <span aria-hidden="true">*</span>
-          </legend>
-          <div className="merch-sizes">
-            {product.sizes.map((value) => (
-              <label
-                key={value}
-                className={size === value ? "is-selected" : ""}
-              >
-                <input
-                  type="radio"
-                  name="size"
-                  value={value}
-                  checked={size === value}
-                  onChange={() => {
-                    setSize(value);
-                    setErrors((current) => ({ ...current, size: undefined }));
-                  }}
-                  required
-                  aria-invalid={Boolean(errors.size)}
-                  aria-describedby={
-                    errors.size ? "merch-size-error" : undefined
-                  }
-                />
-                <span>{sizeLabel(product, value, t)}</span>
-              </label>
-            ))}
-          </div>
-          {errors.size && (
-            <p className="merch-field-error" id="merch-size-error">
-              {t(`form.errors.${errors.size}`)}
-            </p>
-          )}
-        </fieldset>
-
-        <details className="merch-size-guide">
-          <summary>
-            {t("sizeGuide.title")}
-            <span aria-hidden="true">+</span>
-          </summary>
-          <div>
-            <p>{t("sizeGuide.description")}</p>
-            <a
-              href={product.sizeGuide}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={t("sizeGuide.open")}
-            >
-              <img
-                src={product.sizeGuide}
-                alt={t("sizeGuide.alt", {
-                  product: t(`products.${product.key}.name`),
-                })}
-                loading="lazy"
-              />
-            </a>
-            <p className="merch-size-guide-note">{t("sizeGuide.note")}</p>
-          </div>
-        </details>
-
-        <div className="merch-form-heading">
-          <h2>{t("form.title")}</h2>
-          <p>{t("form.description")}</p>
-        </div>
-
-        <div className="merch-input-grid">
-          {["first_name", "last_name", "email", "phone"].map((field) => (
-            <label
-              key={field}
-              className={
-                field === "email" || field === "phone"
-                  ? "merch-input-wide"
-                  : ""
-              }
-              htmlFor={`merch-${field}`}
-            >
-              <span>
-                {t(`form.fields.${field}`)}
-                {field !== "phone" && (
-                  <span aria-hidden="true"> *</span>
-                )}
-              </span>
-
-              <input
-                id={`merch-${field}`}
-                name={field}
-                type={
-                  field === "email"
-                    ? "email"
-                    : field === "phone"
-                      ? "tel"
-                      : "text"
-                }
-                autoComplete={{
-                  first_name: "given-name",
-                  last_name: "family-name",
-                  email: "email",
-                  phone: "tel",
-                }[field]}
-                maxLength={
-                  field === "email" ? 120 : field === "phone" ? 25 : 80
-                }
-                required={field !== "phone"}
-                aria-invalid={Boolean(errors[field])}
-                aria-describedby={
-                  errors[field] ? `merch-${field}-error` : undefined
-                }
-                onChange={() =>
-                  setErrors((current) => ({
-                    ...current,
-                    [field]: undefined,
-                  }))
-                }
-              />
-
-              {errors[field] && (
-                <span
-                  className="merch-field-error"
-                  id={`merch-${field}-error`}
-                >
-                  {t(`form.errors.${errors[field]}`)}
-                </span>
-              )}
+    <div className="merch-order-form">
+      <fieldset className="merch-size-field">
+        <legend>{t("form.size")} <span aria-hidden="true">*</span></legend>
+        <div className="merch-sizes">
+          {product.sizes.map((value) => (
+            <label key={value} className={size === value ? "is-selected" : ""}>
+              <input type="radio" name={`size-${product.slug}`} value={value} checked={size === value} onChange={() => { setSize(value); setError(false); setAdded(false); }} aria-invalid={error} />
+              <span>{sizeLabel(product, value, t)}</span>
             </label>
           ))}
         </div>
-
-        <div className="merch-honeypot" aria-hidden="true">
-          <label htmlFor="merch-website">Website</label>
-          <input
-            id="merch-website"
-            name="website"
-            tabIndex={-1}
-            autoComplete="off"
-          />
-        </div>
-
-        <label className="merch-consent">
-          <input
-            type="checkbox"
-            name="consent"
-            value="yes"
-            required
-            aria-invalid={Boolean(errors.consent)}
-            aria-describedby={
-              errors.consent ? "merch-consent-error" : undefined
-            }
-            onChange={() =>
-              setErrors((current) => ({ ...current, consent: undefined }))
-            }
-          />
-          <span>
-            {t("form.consent")} <Link to="/privacy">{t("form.privacy")}</Link>
-          </span>
-        </label>
-
-        {errors.consent && (
-          <p className="merch-field-error" id="merch-consent-error">
-            {t("form.errors.consent")}
-          </p>
-        )}
-
-        {["error", "notConfigured", "rateLimited"].includes(status) && (
-          <p className="merch-form-status" role="alert">
-            {t(`form.status.${status}`)} <Link to="/contacts">{t("contactClub")}</Link>
-          </p>
-        )}
-
-        <button
-          type="submit"
-          className="merch-button merch-submit"
-          disabled={status === "sending"}
-        >
-          {t(status === "sending" ? "form.sending" : "form.submit")}
-          <MerchIcon name="bag" />
-        </button>
-
-        <p className="merch-form-note">{t("form.note")}</p>
+        {error && <p className="merch-field-error">{t("cart.errors.size")}</p>}
       </fieldset>
-    </form>
+
+      <details className="merch-size-guide">
+        <summary>{t("sizeGuide.title")}<span aria-hidden="true">+</span></summary>
+        <div>
+          <p>{t("sizeGuide.description")}</p>
+          <a href={product.sizeGuide} target="_blank" rel="noreferrer" aria-label={t("sizeGuide.open")}>
+            <img src={product.sizeGuide} alt={t("sizeGuide.alt", { product: t(`products.${product.key}.name`) })} loading="lazy" />
+          </a>
+          <p className="merch-size-guide-note">{t("sizeGuide.note")}</p>
+        </div>
+      </details>
+
+      <div className="merch-form-heading">
+        <h2>{t("cart.addTitle")}</h2>
+        <p>{t("cart.addDescription")}</p>
+      </div>
+      <label className="merch-cart-quantity" htmlFor={`merch-quantity-${product.slug}`}>
+        <span>{t("cart.quantity")}</span>
+        <div className="merch-quantity-control">
+          <button type="button" aria-label={t("cart.decreaseQuantity")} onClick={() => setQuantity((value) => Math.max(1, value - 1))}>−</button>
+          <input id={`merch-quantity-${product.slug}`} type="number" min="1" max="99" value={quantity} onChange={(event) => setQuantity(Math.max(1, Math.min(99, Number(event.target.value) || 1)))} />
+          <button type="button" aria-label={t("cart.increaseQuantity")} onClick={() => setQuantity((value) => Math.min(99, value + 1))}>+</button>
+        </div>
+      </label>
+      <button type="button" className="merch-button merch-submit" onClick={handleAdd}>
+        {t("cart.addToCart")} <MerchIcon name="bag" />
+      </button>
+      {added && <div className="merch-cart-added" role="status" aria-live="polite">
+        <p>{t("cart.added", { count })}</p>
+        <Link className="merch-button merch-button-secondary" to="/merch/cart">{t("cart.goToCart")} <span aria-hidden="true">↗</span></Link>
+      </div>}
+      <p className="merch-form-note">{t("cart.priceNote")}</p>
+    </div>
   );
 }

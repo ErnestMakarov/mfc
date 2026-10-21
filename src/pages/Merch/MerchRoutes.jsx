@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 
 const Merch = lazy(() => import("./Merch.jsx"));
 const MerchProduct = lazy(() => import("./MerchProduct.jsx"));
+const MerchCart = lazy(() => import("./MerchCart.jsx"));
+const MerchCheckout = lazy(() => import("./MerchCheckout.jsx"));
 
 function Loading() {
   const { t } = useTranslation("merch");
@@ -15,4 +17,12 @@ export function MerchRoute() {
 
 export function MerchProductRoute() {
   return <Suspense fallback={<Loading />}><MerchProduct /></Suspense>;
+}
+
+export function MerchCartRoute() {
+  return <Suspense fallback={<Loading />}><MerchCart /></Suspense>;
+}
+
+export function MerchCheckoutRoute() {
+  return <Suspense fallback={<Loading />}><MerchCheckout /></Suspense>;
 }

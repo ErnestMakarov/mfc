@@ -10,7 +10,7 @@ import Contacts from "../pages/Contacts/Contacts.jsx";
 import Documents from "../pages/Documents/Documents.jsx";
 import Privacy from "../pages/Privacy/Privacy.jsx";
 
-import { MerchRoute, MerchProductRoute } from "../pages/Merch/MerchRoutes.jsx";
+import { MerchRoute, MerchProductRoute, MerchCartRoute, MerchCheckoutRoute } from "../pages/Merch/MerchRoutes.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +36,14 @@ export const router = createBrowserRouter([
       {
         path: "merch",
         element: <MerchRoute />,
+      },
+      {
+        path: "merch/cart",
+        element: <MerchCartRoute />,
+      },
+      {
+        path: "merch/checkout",
+        element: <MerchCheckoutRoute />,
       },
       {
         path: "merch/:slug",
